@@ -1,16 +1,49 @@
 {
-  "schema_version": 2,
-  "last_verified_at": "2026-09-11T12:15:00+09:00",
-  "purpose": "Public cross-project state for Kaggle dataset portfolio planning, resumption, and adoption tracking.",
+  "schema_version": 3,
+  "last_verified_at": "2026-09-11T13:12:00+09:00",
+  "purpose": "Public cross-project state for Kaggle dataset portfolio planning, resumption, completion tracking, and adoption diagnosis.",
   "portfolio_url": "https://github.com/TaeyanG4/kaggle-dataset-portfolio",
   "source_of_truth_policy": {
-    "portfolio": "This file is the public cross-project index only.",
-    "project": "Each linked project repository is authoritative for its own pipeline, QA, provenance, and release history.",
-    "kaggle": "Live Kaggle readback is authoritative for current version, status, files, metadata, usability, and adoption metrics."
+    "portfolio": "This repository is the public cross-project index only.",
+    "project": "Each linked project repository is authoritative for its own pipeline, QA, provenance, release invariants, and history.",
+    "kaggle": "Live Kaggle readback is authoritative for current version, processing status, live files, metadata, usability, and adoption metrics."
+  },
+  "documentation_policy": {
+    "public_project_readmes": [
+      "README.md",
+      "README.ko.md",
+      "README.ja.md",
+      "README.zh-CN.md"
+    ],
+    "canonical_language": "English",
+    "languages": [
+      "English",
+      "Korean",
+      "Japanese",
+      "Simplified Chinese"
+    ],
+    "rule": "Keep all four README variants semantically synchronized for every public project unless explicitly opted out by the user. Commands, URLs, measured values, release status, source/rights claims, and interpretation caveats must remain aligned across translations."
+  },
+  "completion_policy": {
+    "terminal_milestones": [
+      "published/released",
+      "maintenance-ready",
+      "paused",
+      "stopped"
+    ],
+    "rule": "Before declaring a project fully complete at a terminal milestone, update this portfolio repository with the latest public project state and live Kaggle facts when relevant.",
+    "required_sync_targets": [
+      "README.md",
+      "README.ko.md",
+      "README.ja.md",
+      "README.zh-CN.md",
+      "portfolio.json"
+    ]
   },
   "refresh_policy": {
     "before_portfolio_decisions": "Refresh live Kaggle metrics/status when the decision depends on current adoption or publication state.",
     "update_portfolio_when": [
+      "a project reaches a terminal/completion milestone",
       "a project is materially published or repositioned",
       "a GitHub or Kaggle URL changes from pending to public",
       "a release shape or major scale changes",
@@ -22,7 +55,7 @@
     "text_default": "UTF-8",
     "json": "UTF-8 without BOM",
     "preserve_non_ascii": true,
-    "rule": "Never silently ignore or replace undecodable Korean/non-ASCII text; encoding failures are data-quality failures."
+    "rule": "Never silently ignore or replace undecodable Korean/Japanese/Chinese/non-ASCII text; encoding failures are data-quality failures."
   },
   "privacy_policy": {
     "public_only": true,
@@ -35,7 +68,7 @@
       "machine identifiers",
       "private account or repository identifiers",
       "email addresses or other personal contact details",
-      "raw personal data not already intentionally public in a dataset"
+      "raw personal data not already intentionally public in a separately reviewed dataset release"
     ]
   },
   "workflow": [
@@ -50,6 +83,8 @@
     "MCP only if needed",
     "showcase notebook",
     "adoption diagnosis",
+    "multilingual GitHub documentation sync",
+    "portfolio sync",
     "iterate or stop"
   ],
   "required_project_fields": [
@@ -69,11 +104,10 @@
   ],
   "metrics_note": "Adoption metrics are point-in-time snapshots and must be refreshed from live Kaggle before decisions that depend on them.",
   "current_priorities": [
-    "Finish KONEPS live metadata/usability cleanup without creating an unnecessary data version.",
-    "Run the NHTSA market-validation and source/schema/rights pilot before any large historical build.",
-    "Diagnose adoption for the five published datasets before starting another large flagship collection.",
-    "Create and link the NHTSA GitHub repository after the local project has a meaningful initial commit.",
-    "Keep README.md and portfolio.json synchronized after material state changes."
+    "Raise the NHTSA release's metadata/Data Explorer usability where useful without creating an unnecessary content version.",
+    "Diagnose discovery, activation, and vote conversion across the six published datasets before starting another large flagship collection.",
+    "Keep public project READMEs synchronized in English, Korean, Japanese, and Simplified Chinese.",
+    "Keep README.md, README.ko.md, README.ja.md, README.zh-CN.md, and portfolio.json synchronized after every project completion/terminal milestone and material state change."
   ],
   "projects": [
     {
@@ -86,11 +120,11 @@
       "github_url": "https://github.com/TaeyanG4/koneps-procurement-intelligence",
       "kaggle_url": "https://www.kaggle.com/datasets/taeyangg4/koneps-public-procurement-intelligence",
       "source_authority": "KONEPS / Korea public-data sources documented in the project repository",
-      "rights_posture": "Re-check source-specific public-data terms before each redistribution decision; project repository is authoritative for the release gate.",
+      "rights_posture": "Re-check source-specific public-data terms before each redistribution decision; the project repository is authoritative for the release gate.",
       "public_release": {
-        "approx_size_bytes": 2605409919,
-        "primary_file_count": 7,
-        "usability_snapshot": 0.7058824
+        "live_file_count": 8,
+        "live_file_bytes": 2767651843,
+        "usability_snapshot": 1.0
       },
       "adoption_snapshot": {
         "as_of": "2026-09-11",
@@ -100,7 +134,7 @@
       "public_caveats": [
         "Procurement stages and source feeds have distinct semantics; do not collapse them without preserving keys and provenance."
       ],
-      "next_action": "Finish live metadata/usability cleanup without creating an unnecessary content version; then diagnose discovery and activation."
+      "next_action": "Diagnose discovery and activation after the current Usability 10.0 release rather than creating an unnecessary content version."
     },
     {
       "id": "korea-power-grid",
@@ -181,7 +215,7 @@
         "Do not pad or guess malformed/non-HSK10 source rows into valid 10-digit product codes.",
         "Respect annual HSK revisions when interpreting product continuity through time."
       ],
-      "next_action": "Keep the strong analysis notebooks discoverable and diagnose why downloads have not converted into votes or external notebooks."
+      "next_action": "Keep the analysis notebooks discoverable and diagnose why downloads have not converted into votes or external notebooks."
     },
     {
       "id": "korea-business-lifecycle",
@@ -212,23 +246,35 @@
     },
     {
       "id": "nhtsa-autonomous-driving-crashes",
-      "state": "local-scaffold",
+      "state": "published",
       "archetype": "TREND/EXPERIMENT",
       "geography": "United States",
       "modality": "tabular + incident narrative text",
       "audience": "autonomous driving, vehicle safety, NLP, exploratory analysis",
-      "github_url": null,
-      "kaggle_url": null,
-      "source_authority": "Planned: official NHTSA Standing General Order public reports only",
-      "rights_posture": "Pending source/right re-verification during pilot before any Kaggle release.",
-      "public_release": null,
-      "adoption_snapshot": null,
+      "github_url": "https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes",
+      "kaggle_url": "https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes",
+      "source_authority": "Official NHTSA Standing General Order public reports",
+      "rights_posture": "The project uses official public CSV releases and conservatively labels the Kaggle license Other rather than making a blanket public-domain claim over submitted narrative/content.",
+      "public_release": {
+        "rows": 3263,
+        "columns": 123,
+        "file_count": 1,
+        "live_file_bytes": 4734159,
+        "source_snapshot_id": "20260827",
+        "usability_snapshot": 0.64705884,
+        "kaggle_status": "ready"
+      },
+      "adoption_snapshot": {
+        "as_of": "2026-09-11",
+        "downloads": 0,
+        "votes": 0
+      },
       "public_caveats": [
-        "Local scaffold exists but has no commits and no public GitHub repository yet.",
-        "Do not interpret raw manufacturer report counts as normalized crash rates or safety rankings.",
-        "Current and historical NHTSA reporting regimes must be inspected before harmonization."
+        "Raw manufacturer/reporting-entity counts are not normalized crash rates or safety rankings.",
+        "The V1 release uses the current third-amended reporting regime and does not force the historical archive into an incompatible schema.",
+        "Incident dates can predate the current reporting regime because later report versions can describe older incidents."
       ],
-      "next_action": "Run Kaggle market validation and the official NHTSA source/schema/rights pilot before any full historical build."
+      "next_action": "Improve useful Kaggle metadata/Data Explorer usability and showcase activation without changing the content release unnecessarily."
     }
   ]
 }
