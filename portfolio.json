@@ -1,11 +1,28 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "last_verified_at": "2026-09-11T12:15:00+09:00",
   "purpose": "Public cross-project state for Kaggle dataset portfolio planning, resumption, and adoption tracking.",
+  "portfolio_url": "https://github.com/TaeyanG4/kaggle-dataset-portfolio",
   "source_of_truth_policy": {
     "portfolio": "This file is the public cross-project index only.",
     "project": "Each linked project repository is authoritative for its own pipeline, QA, provenance, and release history.",
     "kaggle": "Live Kaggle readback is authoritative for current version, status, files, metadata, usability, and adoption metrics."
+  },
+  "refresh_policy": {
+    "before_portfolio_decisions": "Refresh live Kaggle metrics/status when the decision depends on current adoption or publication state.",
+    "update_portfolio_when": [
+      "a project is materially published or repositioned",
+      "a GitHub or Kaggle URL changes from pending to public",
+      "a release shape or major scale changes",
+      "meaningful external adoption changes the bottleneck",
+      "the primary next action materially changes"
+    ]
+  },
+  "encoding_policy": {
+    "text_default": "UTF-8",
+    "json": "UTF-8 without BOM",
+    "preserve_non_ascii": true,
+    "rule": "Never silently ignore or replace undecodable Korean/non-ASCII text; encoding failures are data-quality failures."
   },
   "privacy_policy": {
     "public_only": true,
@@ -21,7 +38,43 @@
       "raw personal data not already intentionally public in a dataset"
     ]
   },
+  "workflow": [
+    "market validation",
+    "source and rights",
+    "pilot",
+    "collect and build",
+    "QA",
+    "simple release",
+    "Kaggle CLI publication",
+    "live readback",
+    "MCP only if needed",
+    "showcase notebook",
+    "adoption diagnosis",
+    "iterate or stop"
+  ],
+  "required_project_fields": [
+    "state",
+    "archetype",
+    "geography",
+    "modality",
+    "audience",
+    "github_url",
+    "kaggle_url",
+    "public_release",
+    "source_authority",
+    "rights_posture",
+    "adoption_snapshot",
+    "public_caveats",
+    "next_action"
+  ],
   "metrics_note": "Adoption metrics are point-in-time snapshots and must be refreshed from live Kaggle before decisions that depend on them.",
+  "current_priorities": [
+    "Finish KONEPS live metadata/usability cleanup without creating an unnecessary data version.",
+    "Run the NHTSA market-validation and source/schema/rights pilot before any large historical build.",
+    "Diagnose adoption for the five published datasets before starting another large flagship collection.",
+    "Create and link the NHTSA GitHub repository after the local project has a meaningful initial commit.",
+    "Keep README.md and portfolio.json synchronized after material state changes."
+  ],
   "projects": [
     {
       "id": "koneps-procurement-intelligence",
@@ -32,6 +85,8 @@
       "audience": "economics, procurement, public-sector analytics, business ML",
       "github_url": "https://github.com/TaeyanG4/koneps-procurement-intelligence",
       "kaggle_url": "https://www.kaggle.com/datasets/taeyangg4/koneps-public-procurement-intelligence",
+      "source_authority": "KONEPS / Korea public-data sources documented in the project repository",
+      "rights_posture": "Re-check source-specific public-data terms before each redistribution decision; project repository is authoritative for the release gate.",
       "public_release": {
         "approx_size_bytes": 2605409919,
         "primary_file_count": 7,
@@ -42,6 +97,9 @@
         "downloads": 0,
         "votes": 0
       },
+      "public_caveats": [
+        "Procurement stages and source feeds have distinct semantics; do not collapse them without preserving keys and provenance."
+      ],
       "next_action": "Finish live metadata/usability cleanup without creating an unnecessary content version; then diagnose discovery and activation."
     },
     {
@@ -53,6 +111,8 @@
       "audience": "energy, forecasting, operations, time-series ML",
       "github_url": "https://github.com/TaeyanG4/korea-power-grid",
       "kaggle_url": "https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute",
+      "source_authority": "Korea Power Exchange (KPX) public monthly files",
+      "rights_posture": "Use the source/licensing evidence recorded in the project repository and re-check when the release scope changes.",
       "public_release": {
         "rows": 1008249180,
         "primary_parquet_bytes": 1985119004,
@@ -63,6 +123,10 @@
         "downloads": 6,
         "votes": 0
       },
+      "public_caveats": [
+        "Demand, dispatch BASEPOINT, and state-estimated output are related but not interchangeable measurements.",
+        "The source files do not provide verified timezone metadata, so the project does not assert a timezone for timestamps."
+      ],
       "next_action": "Diagnose discoverability and first-use friction before expanding the public release."
     },
     {
@@ -74,6 +138,8 @@
       "audience": "computer vision, CLIP, VLM, multimodal learning",
       "github_url": "https://github.com/TaeyanG4/smithsonian-image-text",
       "kaggle_url": "https://www.kaggle.com/datasets/taeyangg4/smithsonian-25k-museum-image-text",
+      "source_authority": "Smithsonian Open Access",
+      "rights_posture": "Automatic release requires both record-level and exact selected media-item CC0 evidence as defined by the project rights gate.",
       "public_release": {
         "images": 24972,
         "approx_live_bytes": 916041112,
@@ -84,6 +150,10 @@
         "downloads": 1,
         "votes": 0
       },
+      "public_caveats": [
+        "Keep each object_id in one split to prevent object-level leakage.",
+        "Do not treat generated or composed model text as authoritative visual description beyond the documented source fields."
+      ],
       "next_action": "Prioritize a compelling low-friction showcase and external reuse rather than adding more release files."
     },
     {
@@ -95,6 +165,8 @@
       "audience": "trade, supply chain, economics, forecasting",
       "github_url": "https://github.com/TaeyanG4/korea-customs-trade",
       "kaggle_url": "https://www.kaggle.com/datasets/taeyangg4/south-korea-customs-trade-hsk10",
+      "source_authority": "Korea Customs Service public data and official annual HSK references",
+      "rights_posture": "Use the public-data/source terms and release evidence recorded in the project repository.",
       "public_release": {
         "strict_hsk10_rows": 22351430,
         "approx_live_bytes": 1174488324,
@@ -105,6 +177,10 @@
         "downloads": 14,
         "votes": 0
       },
+      "public_caveats": [
+        "Do not pad or guess malformed/non-HSK10 source rows into valid 10-digit product codes.",
+        "Respect annual HSK revisions when interpreting product continuity through time."
+      ],
       "next_action": "Keep the strong analysis notebooks discoverable and diagnose why downloads have not converted into votes or external notebooks."
     },
     {
@@ -116,6 +192,8 @@
       "audience": "market analysis, forecasting, location intelligence",
       "github_url": "https://github.com/TaeyanG4/korea-business-lifecycle",
       "kaggle_url": "https://www.kaggle.com/datasets/taeyangg4/korea-food-service-permits",
+      "source_authority": "Korean local-administration food-service permit data documented in the project repository",
+      "rights_posture": "Current public release scope follows the official public-data terms documented and re-verified by the project.",
       "public_release": {
         "rows": 3010802,
         "approx_live_bytes": 403266876,
@@ -126,19 +204,30 @@
         "downloads": 16,
         "votes": 1
       },
+      "public_caveats": [
+        "The current product is a permit snapshot, not a verified business survival/lifecycle panel.",
+        "Permit dates/statuses should not be silently reinterpreted as physical opening, revenue, or irreversible closure events."
+      ],
       "next_action": "Preserve the simple snapshot positioning and use adoption evidence to decide whether a future lifecycle/history product is justified."
     },
     {
       "id": "nhtsa-autonomous-driving-crashes",
-      "state": "local-planning",
+      "state": "local-scaffold",
       "archetype": "TREND/EXPERIMENT",
       "geography": "United States",
       "modality": "tabular + incident narrative text",
       "audience": "autonomous driving, vehicle safety, NLP, exploratory analysis",
       "github_url": null,
       "kaggle_url": null,
+      "source_authority": "Planned: official NHTSA Standing General Order public reports only",
+      "rights_posture": "Pending source/right re-verification during pilot before any Kaggle release.",
       "public_release": null,
       "adoption_snapshot": null,
+      "public_caveats": [
+        "Local scaffold exists but has no commits and no public GitHub repository yet.",
+        "Do not interpret raw manufacturer report counts as normalized crash rates or safety rankings.",
+        "Current and historical NHTSA reporting regimes must be inspected before harmonization."
+      ],
       "next_action": "Run Kaggle market validation and the official NHTSA source/schema/rights pilot before any full historical build."
     }
   ]
