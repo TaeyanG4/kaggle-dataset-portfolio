@@ -1,13 +1,16 @@
 # Portfolio Update Checklist
 
-Use this checklist when a project changes materially. Keep this public repository free of secrets, private machine state, and personal contact information.
+Use this checklist whenever a project changes materially **and whenever a project reaches a completion/terminal milestone** such as `published/released`, `maintenance-ready`, `paused`, or `stopped`.
+
+Keep this public repository free of secrets, private machine state, and personal contact information.
 
 ## Before editing
 
-- Read `README.md` and `portfolio.json`.
+- Read `README.md`, `README.ko.md`, `README.ja.md`, `README.zh-CN.md`, and `portfolio.json`.
 - Read the affected project repository for current public facts and release invariants.
 - If Kaggle state matters, refresh it from live Kaggle instead of copying an old snapshot.
 - Distinguish measured/live facts from estimates or plans.
+- Do not declare the project fully complete until this portfolio synchronization is finished or explicitly recorded as blocked/pending.
 
 ## Update the project record
 
@@ -24,13 +27,32 @@ Record only what is public and useful for cross-project planning:
 - important interpretation caveats
 - current bottleneck and exactly one concrete next action
 
+## Four-language documentation gate
+
+Every public project repository should maintain synchronized root README variants unless the user explicitly opts out:
+
+- `README.md` — English canonical
+- `README.ko.md` — Korean
+- `README.ja.md` — Japanese
+- `README.zh-CN.md` — Simplified Chinese
+
+When a material project fact changes:
+
+- update all four README variants in the same work unit
+- keep commands, paths, URLs, measured values, release status, source/rights claims, and caveats semantically aligned
+- preserve a language switcher near the top of every README
+- do not add new claims merely to make a translation sound smoother
+- verify all four render correctly as UTF-8
+
+The portfolio repository itself must also keep its four README variants synchronized.
+
 ## Encoding integrity
 
 - Keep repository text valid UTF-8.
-- Write JSON as UTF-8 without BOM.
-- Preserve Korean/non-ASCII text exactly.
+- Write JSON as UTF-8 without BOM unless a consuming tool explicitly requires another encoding.
+- Preserve Korean/Japanese/Chinese/non-ASCII text exactly.
 - Never use lossy decode/encode settings such as silent ignore/replacement to make text pass.
-- Inspect Korean/non-ASCII fields after any transcoding or generated-file rewrite.
+- Inspect non-ASCII fields after any transcoding or generated-file rewrite.
 
 ## Never publish here
 
@@ -45,8 +67,9 @@ Record only what is public and useful for cross-project planning:
 
 ## After editing
 
-- Keep `README.md` and `portfolio.json` consistent.
+- Keep `README.md`, `README.ko.md`, `README.ja.md`, `README.zh-CN.md`, and `portfolio.json` consistent.
 - Validate `portfolio.json` as JSON.
-- Re-open the rendered README and check links/Unicode rendering.
+- Re-open rendered README variants and check links/Unicode rendering.
 - Do not overwrite newer adoption metrics with an older snapshot.
 - If a fact cannot be verified, mark it pending/unknown rather than guessing.
+- For a project completion/terminal milestone, record the resulting state and next action before considering portfolio synchronization complete.
