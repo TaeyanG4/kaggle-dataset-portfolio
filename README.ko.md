@@ -70,7 +70,7 @@ Snapshot: **2026-09-11 (KST)**. 이후의 최신 수치는 각 Kaggle 페이지�
 | **Smithsonian 25K Museum Image-Text Dataset** | Smithsonian Open Access 기반 rights-audited image-text와 leakage-safe object splits | [repo](https://github.com/TaeyanG4/smithsonian-image-text) | [dataset](https://www.kaggle.com/datasets/taeyangg4/smithsonian-25k-museum-image-text) | 24,972 images / live 약 916 MB | 10.0 |
 | **South Korea Customs Trade 2012-2026 HSK10** | partner country × 월 × 10-digit HSK 무역 및 HSK10에서 파생한 하위 HS grain | [repo](https://github.com/TaeyanG4/korea-customs-trade) | [dataset](https://www.kaggle.com/datasets/taeyangg4/south-korea-customs-trade-hsk10) | 22.35M HSK10 rows / live 약 1.17 GB | 10.0 |
 | **South Korea Food-Service Permits - Snapshot** | 일반음식점·휴게음식점·제과점의 전국 current permit snapshot | [repo](https://github.com/TaeyanG4/korea-business-lifecycle) | [dataset](https://www.kaggle.com/datasets/taeyangg4/korea-food-service-permits) | 3.01M rows / live 약 403 MB | 10.0 |
-| **Autonomous Driving Crash Reports — NHTSA** | 현행 third-amended NHTSA SGO의 ADS/Level 2 ADAS 사고보고와 narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / CSV 1개 4.73 MB | 7.06 |
+| **Autonomous Driving Crash Reports — NHTSA** | 현행 third-amended NHTSA SGO의 ADS/Level 2 ADAS 사고보고와 narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / CSV 1개 4.73 MB | 10.0 |
 
 ## Adoption snapshot
 
@@ -105,7 +105,8 @@ NHTSA의 vote 수는 현재 live readback에서 반환되지 않아 추정값 0 
 - latest-version selection mismatches: 0
 - public narratives present: 3,262 / 3,263
 - Kaggle version / status: `1 / ready`
-- Kaggle Usability: `7.06 / 10`
+- Kaggle Usability: `10.0 / 10`
+- Data Explorer descriptions: file `1/1` exact, columns `123/123` exact
 - launch adoption snapshot: `5 views / 3 downloads`; 현재 readback에서는 vote 수를 확인할 수 없음
 - showcase notebook: [What Do Reported Self-Driving Crashes Look Like?](https://www.kaggle.com/code/taeyangg4/what-do-reported-self-driving-crashes-look-like) — `COMPLETE`; 본문 H1은 긴 autonomous-driving 제목을 그대로 보존
 
@@ -152,7 +153,7 @@ NHTSA의 vote 수는 현재 live readback에서 반환되지 않아 추정값 0 
 
 ## 현재 우선순위
 
-1. NHTSA 출시 후 약 1주 checkpoint에서 adoption 지표를 다시 측정하고, Data Explorer metadata blocker는 문서화한 채 불필요한 content version churn을 피합니다.
+1. NHTSA 출시 후 약 1주 checkpoint에서 adoption 지표를 다시 측정합니다. Usability/Data Explorer 품질 게이트는 완료됐으므로 불필요한 content version churn은 피합니다.
 2. 새로운 대형 flagship을 시작하기 전에 공개된 6개 Dataset의 discovery, activation, vote conversion을 진단합니다.
 3. 공식 source가 갱신될 때 강한 evergreen/flagship을 유지하되 사용자 가치 없는 version churn은 피합니다.
 4. 모든 공개 프로젝트 README를 영어·한국어·일본어·중국어 간체로 동기화합니다.

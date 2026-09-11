@@ -271,10 +271,13 @@
         "live_file_bytes": 4734159,
         "source_snapshot_id": "20260827",
         "kaggle_version": 1,
-        "usability_snapshot": 0.70588235,
+        "usability_snapshot": 1.0,
         "kaggle_status": "ready",
         "showcase_notebook": "https://www.kaggle.com/code/taeyangg4/what-do-reported-self-driving-crashes-look-like",
-        "data_explorer_column_descriptions_present": 0
+        "data_explorer_file_descriptions_present": 1,
+        "data_explorer_file_descriptions_exact": 1,
+        "data_explorer_column_descriptions_present": 123,
+        "data_explorer_column_descriptions_exact": 123
       },
       "adoption_snapshot": {
         "as_of": "2026-09-11",

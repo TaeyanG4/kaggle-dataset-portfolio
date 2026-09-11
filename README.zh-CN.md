@@ -70,7 +70,7 @@ Snapshot: **2026-09-11 (KST)**。之后的最新值以各 Kaggle page 为 source
 | **Smithsonian 25K Museum Image-Text Dataset** | 基于 Smithsonian Open Access 的 rights-audited image-text data 与 leakage-safe object splits | [repo](https://github.com/TaeyanG4/smithsonian-image-text) | [dataset](https://www.kaggle.com/datasets/taeyangg4/smithsonian-25k-museum-image-text) | 24,972 images / live 约 916 MB | 10.0 |
 | **South Korea Customs Trade 2012-2026 HSK10** | partner country × month × 10-digit HSK 贸易，以及由 HSK10 派生的 lower HS grain | [repo](https://github.com/TaeyanG4/korea-customs-trade) | [dataset](https://www.kaggle.com/datasets/taeyangg4/south-korea-customs-trade-hsk10) | 22.35M HSK10 rows / live 约 1.17 GB | 10.0 |
 | **South Korea Food-Service Permits - Snapshot** | 餐厅、咖啡店、烘焙店的全国 current permit snapshot | [repo](https://github.com/TaeyanG4/korea-business-lifecycle) | [dataset](https://www.kaggle.com/datasets/taeyangg4/korea-food-service-permits) | 3.01M rows / live 约 403 MB | 10.0 |
-| **Autonomous Driving Crash Reports — NHTSA** | 当前 third-amended NHTSA SGO 的 ADS / Level 2 ADAS crash reports 与 narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / 单个 CSV 4.73 MB | 7.06 |
+| **Autonomous Driving Crash Reports — NHTSA** | 当前 third-amended NHTSA SGO 的 ADS / Level 2 ADAS crash reports 与 narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / 单个 CSV 4.73 MB | 10.0 |
 
 ## Adoption snapshot
 
@@ -105,7 +105,8 @@ NHTSA 的 vote 数在本次 live readback 中未返回，因此显示为 —，�
 - latest-version selection mismatches: 0
 - public narratives present: 3,262 / 3,263
 - Kaggle version / status: `1 / ready`
-- Kaggle Usability: `7.06 / 10`
+- Kaggle Usability: `10.0 / 10`
+- Data Explorer descriptions: file `1/1` exact，columns `123/123` exact
 - launch adoption snapshot: `5 views / 3 downloads`；本次 readback 未返回 vote 数
 - showcase notebook: [What Do Reported Self-Driving Crashes Look Like?](https://www.kaggle.com/code/taeyangg4/what-do-reported-self-driving-crashes-look-like) — `COMPLETE`；Notebook H1 保留完整 autonomous-driving 标题
 
@@ -152,7 +153,7 @@ Project repository 保存 reproducible collection/build logic、QA、source note
 
 ## 当前优先级
 
-1. 在 NHTSA 发布约 1 周的 checkpoint 重新测量 adoption 指标，同时记录 Data Explorer metadata blocker 并避免不必要的 content version churn。
+1. 在 NHTSA 发布约 1 周的 checkpoint 重新测量 adoption 指标。Usability / Data Explorer quality gate 已完成，因此避免不必要的 content version churn。
 2. 在启动新的大型 flagship 前，诊断 6 个已发布 Dataset 的 discovery、activation 与 vote conversion。
 3. official source 更新时维护强 evergreen/flagship，但避免没有 user value 的 version churn。
 4. 所有公开 project README 保持 English / Korean / Japanese / Simplified Chinese 同步。
