@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "last_verified_at": "2026-09-11T13:12:00+09:00",
+  "last_verified_at": "2026-09-11T13:26:43+09:00",
   "purpose": "Public cross-project state for Kaggle dataset portfolio planning, resumption, completion tracking, and adoption diagnosis.",
   "portfolio_url": "https://github.com/TaeyanG4/kaggle-dataset-portfolio",
   "source_of_truth_policy": {
@@ -149,19 +149,28 @@
       "rights_posture": "Use the source/licensing evidence recorded in the project repository and re-check when the release scope changes.",
       "public_release": {
         "rows": 1008249180,
-        "primary_parquet_bytes": 1985119004,
-        "usability_snapshot": 1.0
+        "primary_parquet_bytes": 1992834865,
+        "csv_sample_period": "2026-07",
+        "csv_sample_rows": 10060444,
+        "csv_sample_bytes": 502736368,
+        "live_file_count": 5,
+        "live_file_bytes": 2495575266,
+        "kaggle_version": 5,
+        "kaggle_status": "ready",
+        "usability_snapshot": 1.0,
+        "showcase_notebook": "https://www.kaggle.com/code/taeyangg4/south-korea-power-grid-v2-daily-operations-study"
       },
       "adoption_snapshot": {
         "as_of": "2026-09-11",
         "downloads": 6,
+        "views": 26,
         "votes": 0
       },
       "public_caveats": [
         "Demand, dispatch BASEPOINT, and state-estimated output are related but not interchangeable measurements.",
         "The source files do not provide verified timezone metadata, so the project does not assert a timezone for timestamps."
       ],
-      "next_action": "Diagnose discoverability and first-use friction before expanding the public release."
+      "next_action": "Diagnose discoverability and adoption conversion with the refreshed operations notebook before expanding the public release further."
     },
     {
       "id": "smithsonian-image-text",
