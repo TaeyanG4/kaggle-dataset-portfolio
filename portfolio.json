@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "last_verified_at": "2026-09-11T13:26:43+09:00",
+  "last_verified_at": "2026-09-11T14:01:18+09:00",
   "purpose": "Public cross-project state for Kaggle dataset portfolio planning, resumption, completion tracking, and adoption diagnosis.",
   "portfolio_url": "https://github.com/TaeyanG4/kaggle-dataset-portfolio",
   "source_of_truth_policy": {
@@ -104,7 +104,7 @@
   ],
   "metrics_note": "Adoption metrics are point-in-time snapshots and must be refreshed from live Kaggle before decisions that depend on them.",
   "current_priorities": [
-    "Raise the NHTSA release's metadata/Data Explorer usability where useful without creating an unnecessary content version.",
+    "Measure NHTSA launch adoption at the ~1-week checkpoint; keep the Data Explorer metadata blocker documented and avoid unnecessary content-version churn.",
     "Diagnose discovery, activation, and vote conversion across the six published datasets before starting another large flagship collection.",
     "Keep public project READMEs synchronized in English, Korean, Japanese, and Simplified Chinese.",
     "Keep README.md, README.ko.md, README.ja.md, README.zh-CN.md, and portfolio.json synchronized after every project completion/terminal milestone and material state change."
@@ -256,7 +256,7 @@
     {
       "id": "nhtsa-autonomous-driving-crashes",
       "state": "published",
-      "archetype": "TREND/EXPERIMENT",
+      "archetype": "EVERGREEN",
       "geography": "United States",
       "modality": "tabular + incident narrative text",
       "audience": "autonomous driving, vehicle safety, NLP, exploratory analysis",
@@ -270,20 +270,25 @@
         "file_count": 1,
         "live_file_bytes": 4734159,
         "source_snapshot_id": "20260827",
-        "usability_snapshot": 0.64705884,
-        "kaggle_status": "ready"
+        "kaggle_version": 1,
+        "usability_snapshot": 0.70588235,
+        "kaggle_status": "ready",
+        "showcase_notebook": "https://www.kaggle.com/code/taeyangg4/what-do-reported-self-driving-crashes-look-like",
+        "data_explorer_column_descriptions_present": 0
       },
       "adoption_snapshot": {
         "as_of": "2026-09-11",
-        "downloads": 0,
-        "votes": 0
+        "downloads": 3,
+        "views": 5,
+        "votes": null,
+        "notebooks": 1
       },
       "public_caveats": [
         "Raw manufacturer/reporting-entity counts are not normalized crash rates or safety rankings.",
         "The V1 release uses the current third-amended reporting regime and does not force the historical archive into an incompatible schema.",
         "Incident dates can predate the current reporting regime because later report versions can describe older incidents."
       ],
-      "next_action": "Improve useful Kaggle metadata/Data Explorer usability and showcase activation without changing the content release unnecessarily."
+      "next_action": "At the ~1-week checkpoint, refresh views/downloads/votes and notebook reuse before changing positioning or publishing another content version."
     }
   ]
 }

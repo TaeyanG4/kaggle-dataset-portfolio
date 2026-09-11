@@ -70,7 +70,7 @@ Snapshot: **2026-09-11 (KST)**。それ以降の最新値は各 Kaggle page が 
 | **Smithsonian 25K Museum Image-Text Dataset** | Smithsonian Open Access を rights-audited した image-text data と leakage-safe object splits | [repo](https://github.com/TaeyanG4/smithsonian-image-text) | [dataset](https://www.kaggle.com/datasets/taeyangg4/smithsonian-25k-museum-image-text) | 24,972 images / live 約 916 MB | 10.0 |
 | **South Korea Customs Trade 2012-2026 HSK10** | partner country × month × 10-digit HSK 貿易と HSK10 から派生した lower HS grain | [repo](https://github.com/TaeyanG4/korea-customs-trade) | [dataset](https://www.kaggle.com/datasets/taeyangg4/south-korea-customs-trade-hsk10) | 22.35M HSK10 rows / live 約 1.17 GB | 10.0 |
 | **South Korea Food-Service Permits - Snapshot** | restaurant / cafe / bakery の全国 current permit snapshot | [repo](https://github.com/TaeyanG4/korea-business-lifecycle) | [dataset](https://www.kaggle.com/datasets/taeyangg4/korea-food-service-permits) | 3.01M rows / live 約 403 MB | 10.0 |
-| **Autonomous Driving Crash Reports — NHTSA** | current third-amended NHTSA SGO の ADS / Level 2 ADAS crash report と narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / 1 CSV 4.73 MB | 6.47 |
+| **Autonomous Driving Crash Reports — NHTSA** | current third-amended NHTSA SGO の ADS / Level 2 ADAS crash report と narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / 1 CSV 4.73 MB | 7.06 |
 
 ## Adoption snapshot
 
@@ -83,9 +83,11 @@ Snapshot: **2026-09-11 (KST)**。それ以降の最新値は各 Kaggle page が 
 | Smithsonian 25K Museum Image-Text Dataset | 1 | 0 |
 | South Korea Customs Trade 2012-2026 HSK10 | 14 | 0 |
 | South Korea Food-Service Permits - Snapshot | 16 | 1 |
-| Autonomous Driving Crash Reports — NHTSA | 0 | 0 |
+| Autonomous Driving Crash Reports — NHTSA | 3 | — |
 
 これらは quality score ではなく adoption funnel として扱います。views が少なければ discovery/positioning、views に比べ downloads が少なければ activation friction、downloads に比べ votes が少なければ differentiation または value communication を優先的に確認します。
+
+NHTSA の vote 数は今回の live readback では返されなかったため、0 と推測せず — と表示します。
 
 ## 直近の完了プロジェクト: NHTSA ADS/ADAS crashes
 
@@ -102,7 +104,10 @@ Snapshot: **2026-09-11 (KST)**。それ以降の最新値は各 Kaggle page が 
 - current regime report submission coverage: 2025-06 〜 2026-07
 - latest-version selection mismatches: 0
 - public narratives present: 3,262 / 3,263
-- Kaggle status: `ready`
+- Kaggle version / status: `1 / ready`
+- Kaggle Usability: `7.06 / 10`
+- launch adoption snapshot: `5 views / 3 downloads`; vote 数は今回の readback では取得不可
+- showcase notebook: [What Do Reported Self-Driving Crashes Look Like?](https://www.kaggle.com/code/taeyangg4/what-do-reported-self-driving-crashes-look-like) — `COMPLETE`; notebook H1 は長い autonomous-driving タイトルを保持
 
 重要な解釈上の制限: reporting entity や vehicle make の raw count は **crash rate や safety ranking ではありません**。reporting capability、fleet exposure、operating domain、reporting criteria が異なるためです。
 
@@ -115,7 +120,7 @@ Snapshot: **2026-09-11 (KST)**。それ以降の最新値は各 Kaggle page が 
 | Smithsonian | Published | Global / US institution | image + text | CV, CLIP, VLM, multimodal | Evergreen / diversification |
 | Customs Trade | Published | South Korea + global partners | monthly product-country tabular | trade, supply chain, forecasting | Flagship |
 | Food-Service Permits | Published | South Korea | business/location tabular | market analysis, forecasting | Evergreen |
-| NHTSA ADS/ADAS Crashes | Published | United States | tabular + narrative text | autonomous driving, safety, NLP | Trend / experiment |
+| NHTSA ADS/ADAS Crashes | Published | United States | tabular + narrative text | autonomous driving, safety, NLP | Evergreen |
 
 ポートフォリオは Korea-only / tabular への偏りを減らすため、multimodal や US/global interest のテーマへ広げています。
 
@@ -147,7 +152,7 @@ Project repository には reproducible collection/build logic、QA、source note
 
 ## 現在の優先事項
 
-1. 不要な content version を作らず、NHTSA の有用な metadata / Data Explorer Usability を改善する。
+1. NHTSA 公開後およそ1週間の checkpoint で adoption 指標を再測定し、Data Explorer metadata blocker を記録したまま不要な content version churn を避ける。
 2. 新しい大規模 flagship を始める前に、公開済み 6 Dataset の discovery、activation、vote conversion を診断する。
 3. official source 更新時に強い evergreen/flagship を維持するが、user value のない version churn は避ける。
 4. すべての公開 project README を English / Korean / Japanese / Simplified Chinese で同期する。

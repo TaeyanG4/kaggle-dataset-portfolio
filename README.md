@@ -70,7 +70,7 @@ Snapshot: **2026-09-11 (KST)**. Kaggle pages are the source of truth for newer m
 | **Smithsonian 25K Museum Image-Text Dataset** | Rights-audited Smithsonian Open Access image-text data with leakage-safe object splits | [repo](https://github.com/TaeyanG4/smithsonian-image-text) | [dataset](https://www.kaggle.com/datasets/taeyangg4/smithsonian-25k-museum-image-text) | 24,972 images / ~916 MB live | 10.0 |
 | **South Korea Customs Trade 2012-2026 HSK10** | Monthly trade by partner country and Korean 10-digit HSK product, with lower HS grains derived from HSK10 | [repo](https://github.com/TaeyanG4/korea-customs-trade) | [dataset](https://www.kaggle.com/datasets/taeyangg4/south-korea-customs-trade-hsk10) | 22.35M HSK10 rows / ~1.17 GB live | 10.0 |
 | **South Korea Food-Service Permits - Snapshot** | Nationwide current permit snapshot for restaurants, cafes and bakeries | [repo](https://github.com/TaeyanG4/korea-business-lifecycle) | [dataset](https://www.kaggle.com/datasets/taeyangg4/korea-food-service-permits) | 3.01M rows / ~403 MB live | 10.0 |
-| **Autonomous Driving Crash Reports — NHTSA** | Current third-amended NHTSA SGO ADS/Level 2 ADAS crash reports with narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / one 4.73 MB CSV | 6.47 |
+| **Autonomous Driving Crash Reports — NHTSA** | Current third-amended NHTSA SGO ADS/Level 2 ADAS crash reports with narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / one 4.73 MB CSV | 7.06 |
 
 ## Adoption snapshot
 
@@ -83,9 +83,11 @@ Point-in-time metrics from live Kaggle CLI readback on **2026-09-11**:
 | Smithsonian 25K Museum Image-Text Dataset | 1 | 0 |
 | South Korea Customs Trade 2012-2026 HSK10 | 14 | 0 |
 | South Korea Food-Service Permits - Snapshot | 16 | 1 |
-| Autonomous Driving Crash Reports — NHTSA | 0 | 0 |
+| Autonomous Driving Crash Reports — NHTSA | 3 | — |
 
 These counts are intentionally tracked as an adoption funnel rather than treated as a quality score. Low views suggest a discovery/positioning problem; views without downloads suggest activation friction; downloads without votes suggest differentiation or value-communication work is still needed.
+
+The NHTSA vote count was not returned by the current live readback, so it is shown as — rather than guessed as zero.
 
 ## Latest completed project: NHTSA ADS/ADAS crashes
 
@@ -102,7 +104,10 @@ Current measured release facts from the project repository and Kaggle readback:
 - report-submission coverage in current regime: 2025-06 through 2026-07
 - latest-version selection mismatches: 0
 - public narratives present: 3,262 / 3,263 rows
-- Kaggle status: `ready`
+- Kaggle version / status: `1 / ready`
+- Kaggle Usability: `7.06 / 10`
+- launch adoption snapshot: `5 views / 3 downloads`; vote count unavailable in the current readback
+- showcase notebook: [What Do Reported Self-Driving Crashes Look Like?](https://www.kaggle.com/code/taeyangg4/what-do-reported-self-driving-crashes-look-like) — `COMPLETE`; the notebook H1 preserves the long-form autonomous-driving title
 
 Important caveat: raw reporting-entity or vehicle-make counts are **not crash rates or safety rankings** because reporting ability, fleet exposure, operating domain, and reporting criteria differ.
 
@@ -115,7 +120,7 @@ Important caveat: raw reporting-entity or vehicle-make counts are **not crash ra
 | Smithsonian | Published | Global / US institution | image + text | CV, CLIP, VLM, multimodal | Evergreen / diversification |
 | Customs Trade | Published | South Korea + global partners | monthly product-country tabular | trade, supply chain, forecasting | Flagship |
 | Food-Service Permits | Published | South Korea | business/location tabular | market analysis, forecasting | Evergreen |
-| NHTSA ADS/ADAS Crashes | Published | United States | tabular + narrative text | autonomous driving, safety, NLP | Trend / experiment |
+| NHTSA ADS/ADAS Crashes | Published | United States | tabular + narrative text | autonomous driving, safety, NLP | Evergreen |
 
 The portfolio is deliberately moving beyond a Korea-only/tabular concentration by adding multimodal and globally relevant or US-focused products.
 
@@ -147,7 +152,7 @@ For each portfolio project, keep these public, non-sensitive fields current when
 
 ## Current priorities
 
-1. Raise the NHTSA release's Data Explorer/metadata Usability where useful without creating an unnecessary content version.
+1. Re-measure NHTSA launch adoption at the ~1-week checkpoint; keep the Data Explorer metadata blocker documented and avoid unnecessary content-version churn.
 2. Diagnose discovery, activation, and vote conversion across the six published datasets before starting another large flagship collection.
 3. Keep the strongest evergreen/flagship datasets current when their official sources update, but avoid version churn without user value.
 4. Keep all public project READMEs synchronized in English, Korean, Japanese, and Simplified Chinese.
