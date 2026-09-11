@@ -3,9 +3,28 @@
 Public portfolio and operating tracker for reproducible Kaggle datasets built on the path to **Kaggle Dataset Grandmaster**.
 
 **Kaggle:** https://www.kaggle.com/taeyangg4  
-**GitHub:** https://github.com/TaeyanG4
+**GitHub:** https://github.com/TaeyanG4  
+**Machine-readable state:** [`portfolio.json`](portfolio.json)
 
 > 한국어: 공식·공개 원천을 재현 가능한 파이프라인으로 수집·검증하고, Kaggle 사용자가 빠르게 이해하고 활용할 수 있는 데이터 제품으로 공개하는 프로젝트 모음입니다.
+
+## How to use this repository
+
+This repository is the **cross-project index**, not a replacement for project repositories or live Kaggle state.
+
+For a new AI/chat/CLI session:
+
+1. Read this README and `portfolio.json` before proposing another large dataset or resuming portfolio work.
+2. Use the linked project repository as the source of truth for that project's code, QA, provenance, release invariants, and history.
+3. Use live Kaggle readback as the source of truth for current dataset version, processing status, files, metadata, Usability, downloads, votes, and notebook state.
+4. Treat point-in-time metrics in this repository as snapshots. Refresh them before making a decision that depends on current adoption.
+5. Update this portfolio after a material release, positioning change, new public repository, meaningful adoption change, or a major next-action change.
+
+Do not store secrets or private machine/session data here. Keep API keys, OAuth tokens, authorization headers, cookies, credential-bearing `.env` files, local absolute paths, machine identifiers, email addresses, and private account/repository identifiers out of this public portfolio.
+
+### Text encoding
+
+All text files in this portfolio should remain valid **UTF-8**. Preserve Korean and other non-ASCII text exactly; never "fix" encoding by silently dropping or replacing undecodable characters. JSON should be written as UTF-8 without BOM unless a consuming tool explicitly requires something else.
 
 ## Operating principle
 
@@ -57,7 +76,7 @@ These counts are intentionally tracked as an adoption funnel rather than treated
 
 ### `nhtsa-autonomous-driving-crashes`
 
-**Status:** local project created; market validation / pilot next.  
+**Status:** local repository scaffold exists; no commits or public GitHub repository yet; market validation / source-schema-rights pilot next.  
 **Planned product:** an analysis-ready dataset built from official NHTSA Standing General Order reports involving ADS and Level 2 ADAS systems, including vehicle, road, severity and incident-narrative fields.
 
 Planned V1 principles:
@@ -75,14 +94,14 @@ Planned V1 principles:
 
 ## Portfolio shape
 
-| Project | Geography | Modality / grain | Primary audience | Role |
-|---|---|---|---|---|
-| KONEPS | South Korea | relational/tabular procurement | economics, procurement, business ML | Flagship |
-| Power Grid | South Korea | high-frequency time series | energy, forecasting, operations | Flagship |
-| Smithsonian | Global / US institution | image + text | CV, CLIP, VLM, multimodal | Evergreen / diversification |
-| Customs Trade | South Korea + global partners | monthly product-country tabular | trade, supply chain, forecasting | Flagship |
-| Food-Service Permits | South Korea | business/location tabular | market analysis, forecasting | Evergreen |
-| NHTSA ADS/ADAS Crashes | United States | tabular + narrative text | autonomous driving, safety, NLP | Trend / experiment |
+| Project | State | Geography | Modality / grain | Primary audience | Role |
+|---|---|---|---|---|---|
+| KONEPS | Published | South Korea | relational/tabular procurement | economics, procurement, business ML | Flagship |
+| Power Grid | Published | South Korea | high-frequency time series | energy, forecasting, operations | Flagship |
+| Smithsonian | Published | Global / US institution | image + text | CV, CLIP, VLM, multimodal | Evergreen / diversification |
+| Customs Trade | Published | South Korea + global partners | monthly product-country tabular | trade, supply chain, forecasting | Flagship |
+| Food-Service Permits | Published | South Korea | business/location tabular | market analysis, forecasting | Evergreen |
+| NHTSA ADS/ADAS Crashes | Planning/pilot | United States | tabular + narrative text | autonomous driving, safety, NLP | Trend / experiment |
 
 The portfolio is deliberately moving beyond a Korea-only/tabular concentration by adding multimodal and globally relevant or US-focused products.
 
@@ -96,13 +115,30 @@ Project repositories contain the reproducible collection/build logic, QA, source
 - media: keep root choices minimal, typically media folder(s) + one metadata table
 - do not publish redundant full CSV + Parquet + JSON copies merely for completeness
 
+## Minimum project record
+
+For each portfolio project, keep these public, non-sensitive fields current when they are known:
+
+- state and archetype
+- geography, modality/grain, target audience, and primary task
+- GitHub URL and Kaggle URL
+- public release shape and high-level scale
+- source authority and rights posture at a high level
+- latest verified Kaggle status/Usability when relevant
+- point-in-time adoption metrics with an `as_of` date
+- current bottleneck and one concrete next action
+- important public caveats that affect interpretation
+
+`portfolio.json` is intended to make these fields easy for a new session or agent to inspect without scraping prose from every repository.
+
 ## Current priorities
 
 1. Finish KONEPS live metadata/usability cleanup without creating unnecessary data versions.
-2. Run the NHTSA market-validation and source/schema pilot before any large historical build.
+2. Run the NHTSA market-validation and source/schema/rights pilot before any large historical build.
 3. Diagnose adoption for the five published datasets before starting another large flagship collection.
-4. Update this portfolio when a dataset is materially released, repositioned, or gains meaningful external adoption.
+4. Create and link the NHTSA GitHub repository only after the local project has a meaningful initial commit worth publishing.
+5. Refresh `portfolio.json` and this README when state or adoption materially changes.
 
 ---
 
-This repository is a portfolio/index. Each linked project repository remains the source of truth for its own pipeline, QA, provenance and release history.
+This repository is a portfolio/index. Each linked project repository remains the source of truth for its own pipeline, QA, provenance and release history, and live Kaggle readback remains authoritative for current platform state.
