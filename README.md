@@ -4,7 +4,8 @@ Public portfolio and operating tracker for reproducible Kaggle datasets built on
 
 **Kaggle:** https://www.kaggle.com/taeyangg4  
 **GitHub:** https://github.com/TaeyanG4  
-**Machine-readable state:** [`portfolio.json`](portfolio.json)
+**Machine-readable state:** [`portfolio.json`](portfolio.json)  
+**Update checklist:** [`UPDATE_CHECKLIST.md`](UPDATE_CHECKLIST.md)
 
 > 한국어: 공식·공개 원천을 재현 가능한 파이프라인으로 수집·검증하고, Kaggle 사용자가 빠르게 이해하고 활용할 수 있는 데이터 제품으로 공개하는 프로젝트 모음입니다.
 
