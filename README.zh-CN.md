@@ -61,7 +61,7 @@ market validation -> source/rights -> pilot -> collect/build -> QA
 
 ## 已发布 Dataset
 
-Snapshot: **2026-09-11 (KST)**。之后的最新值以各 Kaggle page 为 source of truth。
+Snapshot: **2026-10-25 (KST)**。之后的最新值以各 Kaggle page 为 source of truth。
 
 | Project | Data product | GitHub | Kaggle | Scale | Usability |
 |---|---|---|---|---:|---:|
@@ -71,46 +71,48 @@ Snapshot: **2026-09-11 (KST)**。之后的最新值以各 Kaggle page 为 source
 | **South Korea Customs Trade 2012-2026 HSK10** | partner country × month × 10-digit HSK 贸易，以及由 HSK10 派生的 lower HS grain | [repo](https://github.com/TaeyanG4/korea-customs-trade) | [dataset](https://www.kaggle.com/datasets/taeyangg4/south-korea-customs-trade-hsk10) | 22.35M HSK10 rows / live 约 1.17 GB | 10.0 |
 | **South Korea Food-Service Permits - Snapshot** | 餐厅、咖啡店、烘焙店的全国 current permit snapshot | [repo](https://github.com/TaeyanG4/korea-business-lifecycle) | [dataset](https://www.kaggle.com/datasets/taeyangg4/korea-food-service-permits) | 3.01M rows / live 约 403 MB | 10.0 |
 | **Autonomous Driving Crash Reports — NHTSA** | 当前 third-amended NHTSA SGO 的 ADS / Level 2 ADAS crash reports 与 narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / 单个 CSV 4.73 MB | 10.0 |
+| **Kaggle Top Solutions and Strategies** | 不限名次地收集已结束 Kaggle competition 的公开 solution writeup，并整理每个 writeup 的技法、原文链接与名次依据 | [repo](https://github.com/TaeyanG4/kaggle-top-solutions-and-strategies) | [dataset](https://www.kaggle.com/datasets/taeyangg4/kaggle-top-solutions-and-strategies) | 70,576 rows / 4 files / live 约 76.1 MB | 10.0 |
 
 ## Adoption snapshot
 
-基于 **2026-09-11** live Kaggle CLI readback：
+基于 **2026-10-25** live Kaggle CLI readback：
 
 | Dataset | Downloads | Votes |
 |---|---:|---:|
-| KONEPS Public Procurement Intelligence | 0 | 0 |
-| South Korea Power Grid 5-Minute Data | 6 | 0 |
-| Smithsonian 25K Museum Image-Text Dataset | 1 | 0 |
-| South Korea Customs Trade 2012-2026 HSK10 | 14 | 0 |
-| South Korea Food-Service Permits - Snapshot | 16 | 1 |
-| Autonomous Driving Crash Reports — NHTSA | 3 | — |
+| KONEPS Public Procurement Intelligence | 24 | 0 |
+| South Korea Power Grid 5-Minute Data | 69 | 0 |
+| Smithsonian 25K Museum Image-Text Dataset | 103 | 1 |
+| South Korea Customs Trade 2012-2026 HSK10 | 73 | 0 |
+| South Korea Food-Service Permits - Snapshot | 130 | 1 |
+| Autonomous Driving Crash Reports — NHTSA | 26 | 0 |
+| Kaggle Top Solutions and Strategies | 41 | 1 |
 
 这些数字不是 quality score，而是 adoption funnel。views 低时优先诊断 discovery/positioning；views 相对高但 downloads 低时诊断 activation friction；downloads 有但 votes 低时诊断 differentiation 或 value communication。
 
-NHTSA 的 vote 数在本次 live readback 中未返回，因此显示为 —，不猜测为 0。
+dataset list readback 返回 downloads、votes 与 Usability，但不返回每个 dataset 的 views，因此 `portfolio.json` 中保留的 views 仍沿用此前的 `2026-09-11` 日期。funnel 中最弱的一环仍是 votes：七个 dataset 中仍有四个为 0。
 
-## 最近完成的项目：NHTSA ADS/ADAS crashes
+## 最近完成的项目：Kaggle Top Solutions and Strategies
 
-`nhtsa-autonomous-driving-crashes` 已公开到 GitHub 和 Kaggle。V1 没有强行把 2021 至 2025 年 6 月 archive 合并到同一个 schema，而是仅使用 **current third-amended NHTSA reporting regime**。
+`kaggle-top-solutions-and-strategies` 已公开到 GitHub 和 Kaggle。它**不限名次地收集已结束 Kaggle competition 的公开 solution writeup**，并为每个 writeup 记录所报告的技法、原文链接与明确的 rank status。公开文件只包含链接与摘要，solution 原文与引用保留在内部。
 
 当前实测 release：
 
-- source snapshot ID: `20260827`
-- source rows: 3,413
-- canonical latest Report IDs: 3,263
-- columns: 123
-- public artifact: 1 个 `data.csv`
-- incident-month coverage: 2023-01 至 2026-07
-- current regime report submission coverage: 2025-06 至 2026-07
-- latest-version selection mismatches: 0
-- public narratives present: 3,262 / 3,263
-- Kaggle version / status: `1 / ready`
-- Kaggle Usability: `10.0 / 10`
-- Data Explorer descriptions: file `1/1` exact，columns `123/123` exact
-- launch adoption snapshot: `5 views / 3 downloads`；本次 readback 未返回 vote 数
-- showcase notebook: [What Do Reported Self-Driving Crashes Look Like?](https://www.kaggle.com/code/taeyangg4/what-do-reported-self-driving-crashes-look-like) — `COMPLETE`；Notebook H1 保留完整 autonomous-driving 标题
+- release / Kaggle version: `0.6.0` / `6`（2026-10-24 07:13 UTC 上传）
+- public artifact: merged `kaggle_all_solutions_and_strategies_merged.csv`，以及 `competitions.csv`、`solutions.csv`、`strategies.csv`
+- public rows: 70,576（competition 678、solution 7,237、技法行 62,661）
+- live files: 4 files / 102 columns / 76,105,813 bytes
+- competition coverage: 基于 Meta Kaggle 官方字段的 678 个已结束 competition，2010 至 2026
+- 官方名次: 6,016 条。`rank_status` 区分 official、reported 与 unknown，不猜测名次
+- 按名次的 solution: top 100 内 6,035，top 100 外 920，名次不明 282
+- 按使用状态的技法行: final_used 53,977、tested_rejected 4,286、failed 2,731
+- Kaggle version / status: `6 / ready`
+- Kaggle Usability: `10.0 / 10`（上传后 8.24，补齐 column description 后 10.00）
+- Data Explorer descriptions: file `4/4`、columns `102/102`
+- adoption snapshot: 2026-10-25 为 `41 downloads / 1 vote`
+- showcase notebook: [Getting Started with Kaggle Top Solutions](https://www.kaggle.com/code/taeyangg4/getting-started-with-kaggle-top-solutions) — `COMPLETE`（version 12）
+- 权利: 数据汇编采用 CC BY-NC-SA 4.0，并保留各 source 的 MIT/Apache 声明。这是一个非商业研究项目
 
-重要解释限制：reporting entity 或 vehicle make 的 raw count **不是 crash rate，也不是 safety ranking**。reporting capability、fleet exposure、operating domain 与 reporting criteria 并不相同。
+重要解释限制：solution 摘要与技法判定是**模型读取到的作者主张**（Codex `gpt-6.1-sol`），与原文的核对由代码完成，但未用人工判定的 gold set 验证。2026-10-23 另一个 LLM session 交叉检查了 200 张 card，判断技法判定的 99.0% 正确；这是同系列模型之间的一致，而非人工评估。缺少 label 不等于没有使用该技法。
 
 ## 作品集结构
 
@@ -122,6 +124,7 @@ NHTSA 的 vote 数在本次 live readback 中未返回，因此显示为 —，�
 | Customs Trade | Published | South Korea + global partners | monthly product-country tabular | trade, supply chain, forecasting | Flagship |
 | Food-Service Permits | Published | South Korea | business/location tabular | market analysis, forecasting | Evergreen |
 | NHTSA ADS/ADAS Crashes | Published | United States | tabular + narrative text | autonomous driving, safety, NLP | Evergreen |
+| Kaggle Top Solutions | Published | Global / Kaggle platform | writeup metadata + technique rows | Kaggle competitors, ML practitioners, AI agents | Competition painkiller |
 
 作品集正在降低 Korea-only / tabular 的集中度，并增加 multimodal 以及面向美国和全球受众的主题。
 
@@ -153,8 +156,8 @@ Project repository 保存 reproducible collection/build logic、QA、source note
 
 ## 当前优先级
 
-1. 在 NHTSA 发布约 1 周的 checkpoint 重新测量 adoption 指标。Usability / Data Explorer quality gate 已完成，因此避免不必要的 content version churn。
-2. 在启动新的大型 flagship 前，诊断 6 个已发布 Dataset 的 discovery、activation 与 vote conversion。
+1. 在启动新的大型 flagship 前，诊断 7 个已发布 Dataset 的 discovery、activation 与 vote conversion。
+2. Kaggle Top Solutions and Strategies 在主张准确率之前，先构建人工判定的 label 样本；定期更新 `kts update` 的计划任务注册由 owner 亲自执行。
 3. official source 更新时维护强 evergreen/flagship，但避免没有 user value 的 version churn。
 4. 所有公开 project README 保持 English / Korean / Japanese / Simplified Chinese 同步。
 5. 所有 project completion / terminal milestone 与 material state change 后，更新 `portfolio.json` 与四种语言 README。

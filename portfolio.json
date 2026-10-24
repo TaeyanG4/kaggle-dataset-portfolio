@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "last_verified_at": "2026-09-11T14:01:18+09:00",
+  "last_verified_at": "2026-10-25T02:36:02+09:00",
   "purpose": "Public cross-project state for Kaggle dataset portfolio planning, resumption, completion tracking, and adoption diagnosis.",
   "portfolio_url": "https://github.com/TaeyanG4/kaggle-dataset-portfolio",
   "source_of_truth_policy": {
@@ -102,10 +102,11 @@
     "public_caveats",
     "next_action"
   ],
-  "metrics_note": "Adoption metrics are point-in-time snapshots and must be refreshed from live Kaggle before decisions that depend on them.",
+  "metrics_note": "Adoption metrics are point-in-time snapshots and must be refreshed from live Kaggle before decisions that depend on them. The 2026-10-25 refresh used the Kaggle dataset list readback, which returns downloads, votes and Usability but not per-dataset views; earlier view counts are kept under earlier_snapshot with their own date.",
   "current_priorities": [
-    "Measure NHTSA launch adoption at the ~1-week checkpoint; keep the Data Explorer metadata blocker documented and avoid unnecessary content-version churn.",
-    "Diagnose discovery, activation, and vote conversion across the six published datasets before starting another large flagship collection.",
+    "Diagnose discovery, activation, and vote conversion across the seven published datasets before starting another large flagship collection.",
+    "For kaggle-top-solutions-and-strategies, build a human-judged label sample before claiming accuracy, and leave the periodic `kts update` schedule for the owner to register.",
+    "Keep the strongest evergreen/flagship datasets current when their official sources update, but avoid version churn without user value.",
     "Keep public project READMEs synchronized in English, Korean, Japanese, and Simplified Chinese.",
     "Keep README.md, README.ko.md, README.ja.md, README.zh-CN.md, and portfolio.json synchronized after every project completion/terminal milestone and material state change."
   ],
@@ -127,8 +128,8 @@
         "usability_snapshot": 1.0
       },
       "adoption_snapshot": {
-        "as_of": "2026-09-11",
-        "downloads": 0,
+        "as_of": "2026-10-25",
+        "downloads": 24,
         "votes": 0
       },
       "public_caveats": [
@@ -161,10 +162,14 @@
         "showcase_notebook": "https://www.kaggle.com/code/taeyangg4/south-korea-power-grid-v2-daily-operations-study"
       },
       "adoption_snapshot": {
-        "as_of": "2026-09-11",
-        "downloads": 6,
-        "views": 26,
-        "votes": 0
+        "as_of": "2026-10-25",
+        "downloads": 69,
+        "votes": 0,
+        "earlier_snapshot": {
+          "as_of": "2026-09-11",
+          "views": 26,
+          "downloads": 6
+        }
       },
       "public_caveats": [
         "Demand, dispatch BASEPOINT, and state-estimated output are related but not interchangeable measurements.",
@@ -189,9 +194,9 @@
         "usability_snapshot": 1.0
       },
       "adoption_snapshot": {
-        "as_of": "2026-09-11",
-        "downloads": 1,
-        "votes": 0
+        "as_of": "2026-10-25",
+        "downloads": 103,
+        "votes": 1
       },
       "public_caveats": [
         "Keep each object_id in one split to prevent object-level leakage.",
@@ -216,8 +221,8 @@
         "usability_snapshot": 1.0
       },
       "adoption_snapshot": {
-        "as_of": "2026-09-11",
-        "downloads": 14,
+        "as_of": "2026-10-25",
+        "downloads": 73,
         "votes": 0
       },
       "public_caveats": [
@@ -243,8 +248,8 @@
         "usability_snapshot": 1.0
       },
       "adoption_snapshot": {
-        "as_of": "2026-09-11",
-        "downloads": 16,
+        "as_of": "2026-10-25",
+        "downloads": 130,
         "votes": 1
       },
       "public_caveats": [
@@ -280,11 +285,15 @@
         "data_explorer_column_descriptions_exact": 123
       },
       "adoption_snapshot": {
-        "as_of": "2026-09-11",
-        "downloads": 3,
-        "views": 5,
-        "votes": null,
-        "notebooks": 1
+        "as_of": "2026-10-25",
+        "downloads": 26,
+        "votes": 0,
+        "earlier_snapshot": {
+          "as_of": "2026-09-11",
+          "views": 5,
+          "notebooks": 1,
+          "downloads": 3
+        }
       },
       "public_caveats": [
         "Raw manufacturer/reporting-entity counts are not normalized crash rates or safety rankings.",
@@ -292,6 +301,50 @@
         "Incident dates can predate the current reporting regime because later report versions can describe older incidents."
       ],
       "next_action": "At the ~1-week checkpoint, refresh views/downloads/votes and notebook reuse before changing positioning or publishing another content version."
+    },
+    {
+      "id": "kaggle-top-solutions-and-strategies",
+      "state": "published",
+      "archetype": "COMPETITION-PAINKILLER",
+      "geography": "Global / Kaggle platform",
+      "modality": "solution writeup metadata + per-solution technique rows (tabular text)",
+      "audience": "Kaggle competitors, ML practitioners, AI agents, competition meta-research",
+      "github_url": "https://github.com/TaeyanG4/kaggle-top-solutions-and-strategies",
+      "kaggle_url": "https://www.kaggle.com/datasets/taeyangg4/kaggle-top-solutions-and-strategies",
+      "source_authority": "Meta Kaggle official competition/team/rank fields, solution text fetched through the official Kaggle API and author GitHub READMEs, plus third-party label datasets used only as candidates",
+      "rights_posture": "Access, local storage, LLM transmission and redistribution are judged separately per source; the public scope is links and summaries only, so solution full text and evidence quotes are not exported. The data compilation is CC BY-NC-SA 4.0 and preserves the MIT/Apache notices of its sources.",
+      "public_release": {
+        "release": "0.6.0",
+        "rows": 70576,
+        "columns": 102,
+        "file_count": 4,
+        "live_file_bytes": 76105813,
+        "by_record_type": {
+          "competition": 678,
+          "solution": 7237,
+          "strategy": 62661
+        },
+        "kaggle_version": 6,
+        "usability_snapshot": 1.0,
+        "kaggle_status": "ready",
+        "showcase_notebook": "https://www.kaggle.com/code/taeyangg4/getting-started-with-kaggle-top-solutions",
+        "data_explorer_file_descriptions_present": 4,
+        "data_explorer_file_descriptions_exact": 4,
+        "data_explorer_column_descriptions_present": 102,
+        "data_explorer_column_descriptions_exact": 102
+      },
+      "adoption_snapshot": {
+        "as_of": "2026-10-25",
+        "downloads": 41,
+        "votes": 1
+      },
+      "public_caveats": [
+        "Solution summaries and technique judgements are a model's reading of what the author claimed (Codex gpt-6.1-sol), checked against the source text in code but not against a human-judged gold set.",
+        "A separate LLM session cross-checked 200 cards on 2026-10-23 and found 99.0% of the technique judgements correct; that is same-model-family agreement, not human evaluation.",
+        "A missing technique label is not evidence that the technique was not used, and rank_status separates official, reported and unknown ranks instead of guessing a rank.",
+        "Retrieval quality and causal performance gains from using the dataset have not been measured."
+      ],
+      "next_action": "Build a human-judged label sample for technique, usage state and summary precision before claiming accuracy; the periodic `kts update` schedule stays unregistered until the owner runs it."
     }
   ]
 }

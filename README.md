@@ -61,7 +61,7 @@ Core rules:
 
 ## Published datasets
 
-Snapshot: **2026-09-11 (KST)**. Kaggle pages are the source of truth for newer metrics.
+Snapshot: **2026-10-25 (KST)**. Kaggle pages are the source of truth for newer metrics.
 
 | Project | Data product | GitHub | Kaggle | Scale | Usability |
 |---|---|---|---|---:|---:|
@@ -71,46 +71,48 @@ Snapshot: **2026-09-11 (KST)**. Kaggle pages are the source of truth for newer m
 | **South Korea Customs Trade 2012-2026 HSK10** | Monthly trade by partner country and Korean 10-digit HSK product, with lower HS grains derived from HSK10 | [repo](https://github.com/TaeyanG4/korea-customs-trade) | [dataset](https://www.kaggle.com/datasets/taeyangg4/south-korea-customs-trade-hsk10) | 22.35M HSK10 rows / ~1.17 GB live | 10.0 |
 | **South Korea Food-Service Permits - Snapshot** | Nationwide current permit snapshot for restaurants, cafes and bakeries | [repo](https://github.com/TaeyanG4/korea-business-lifecycle) | [dataset](https://www.kaggle.com/datasets/taeyangg4/korea-food-service-permits) | 3.01M rows / ~403 MB live | 10.0 |
 | **Autonomous Driving Crash Reports — NHTSA** | Current third-amended NHTSA SGO ADS/Level 2 ADAS crash reports with narrative text | [repo](https://github.com/TaeyanG4/nhtsa-autonomous-driving-crashes) | [dataset](https://www.kaggle.com/datasets/taeyangg4/nhtsa-autonomous-driving-crashes) | 3,263 rows × 123 cols / one 4.73 MB CSV | 10.0 |
+| **Kaggle Top Solutions and Strategies** | Public solution writeups of finished Kaggle competitions at every rank, with the techniques each writeup reports, source links and rank status | [repo](https://github.com/TaeyanG4/kaggle-top-solutions-and-strategies) | [dataset](https://www.kaggle.com/datasets/taeyangg4/kaggle-top-solutions-and-strategies) | 70,576 rows / 4 files / ~76.1 MB live | 10.0 |
 
 ## Adoption snapshot
 
-Point-in-time metrics from live Kaggle CLI readback on **2026-09-11**:
+Point-in-time metrics from live Kaggle CLI readback on **2026-10-25**:
 
 | Dataset | Downloads | Votes |
 |---|---:|---:|
-| KONEPS Public Procurement Intelligence | 0 | 0 |
-| South Korea Power Grid 5-Minute Data | 6 | 0 |
-| Smithsonian 25K Museum Image-Text Dataset | 1 | 0 |
-| South Korea Customs Trade 2012-2026 HSK10 | 14 | 0 |
-| South Korea Food-Service Permits - Snapshot | 16 | 1 |
-| Autonomous Driving Crash Reports — NHTSA | 3 | — |
+| KONEPS Public Procurement Intelligence | 24 | 0 |
+| South Korea Power Grid 5-Minute Data | 69 | 0 |
+| Smithsonian 25K Museum Image-Text Dataset | 103 | 1 |
+| South Korea Customs Trade 2012-2026 HSK10 | 73 | 0 |
+| South Korea Food-Service Permits - Snapshot | 130 | 1 |
+| Autonomous Driving Crash Reports — NHTSA | 26 | 0 |
+| Kaggle Top Solutions and Strategies | 41 | 1 |
 
 These counts are intentionally tracked as an adoption funnel rather than treated as a quality score. Low views suggest a discovery/positioning problem; views without downloads suggest activation friction; downloads without votes suggest differentiation or value-communication work is still needed.
 
-The NHTSA vote count was not returned by the current live readback, so it is shown as — rather than guessed as zero.
+The dataset list readback returns downloads, votes and Usability but not per-dataset views, so the earlier view counts kept in `portfolio.json` keep their own `2026-09-11` date. Votes remain the weakest step of the funnel: four of the seven datasets still have none.
 
-## Latest completed project: NHTSA ADS/ADAS crashes
+## Latest completed project: Kaggle Top Solutions and Strategies
 
-`nhtsa-autonomous-driving-crashes` is now public on GitHub and Kaggle. The current release deliberately uses the **current third-amended NHTSA reporting regime** rather than forcing the 2021–June 2025 archive into an incompatible schema.
+`kaggle-top-solutions-and-strategies` is now public on GitHub and Kaggle. It indexes the **public solution writeups of finished Kaggle competitions at every rank**, with the techniques each writeup reports, the source link and an explicit rank status. The public files carry links and summaries only; solution full text and evidence quotes stay internal.
 
 Current measured release facts from the project repository and Kaggle readback:
 
-- source snapshot ID: `20260827`
-- source rows: 3,413
-- canonical latest Report IDs: 3,263
-- columns: 123
-- public artifact: one `data.csv`
-- incident-month coverage: 2023-01 through 2026-07
-- report-submission coverage in current regime: 2025-06 through 2026-07
-- latest-version selection mismatches: 0
-- public narratives present: 3,262 / 3,263 rows
-- Kaggle version / status: `1 / ready`
-- Kaggle Usability: `10.0 / 10`
-- Data Explorer descriptions: file `1/1` exact; columns `123/123` exact
-- launch adoption snapshot: `5 views / 3 downloads`; vote count unavailable in the current readback
-- showcase notebook: [What Do Reported Self-Driving Crashes Look Like?](https://www.kaggle.com/code/taeyangg4/what-do-reported-self-driving-crashes-look-like) — `COMPLETE`; the notebook H1 preserves the long-form autonomous-driving title
+- release / Kaggle version: `0.6.0` / `6` (uploaded 2026-10-24 07:13 UTC)
+- public artifacts: the merged `kaggle_all_solutions_and_strategies_merged.csv` plus `competitions.csv`, `solutions.csv` and `strategies.csv`
+- public rows: 70,576 (competitions 678, solutions 7,237, technique rows 62,661)
+- live files: 4 files / 102 columns / 76,105,813 bytes
+- competition coverage: 678 finished competitions, 2010-2026, from Meta Kaggle official fields
+- official ranks: 6,016; `rank_status` separates official, reported and unknown instead of guessing a rank
+- solutions by rank: 6,035 inside the top 100, 920 outside it, 282 with an unknown rank
+- technique rows by usage: 53,977 final_used, 4,286 tested_rejected, 2,731 failed
+- Kaggle version / status: `6 / ready`
+- Kaggle Usability: `10.0 / 10` (8.24 right after the upload, 10.00 after the column descriptions)
+- Data Explorer descriptions: files `4/4`; columns `102/102`
+- adoption snapshot: `41 downloads / 1 vote` on 2026-10-25
+- showcase notebook: [Getting Started with Kaggle Top Solutions](https://www.kaggle.com/code/taeyangg4/getting-started-with-kaggle-top-solutions) — `COMPLETE` (version 12)
+- rights: the data compilation is CC BY-NC-SA 4.0 and preserves the MIT/Apache notices of its sources; this is a non-commercial research project
 
-Important caveat: raw reporting-entity or vehicle-make counts are **not crash rates or safety rankings** because reporting ability, fleet exposure, operating domain, and reporting criteria differ.
+Important caveat: the per-solution summaries and technique judgements are **a model's reading of what the author claimed** (Codex `gpt-6.1-sol`), checked against the source text in code but not against a human-judged gold set. A separate LLM session cross-checked 200 cards on 2026-10-23 and found 99.0% of the technique judgements correct; that is same-model-family agreement, not human evaluation. A missing label is not evidence that a technique was not used.
 
 ## Portfolio shape
 
@@ -122,6 +124,7 @@ Important caveat: raw reporting-entity or vehicle-make counts are **not crash ra
 | Customs Trade | Published | South Korea + global partners | monthly product-country tabular | trade, supply chain, forecasting | Flagship |
 | Food-Service Permits | Published | South Korea | business/location tabular | market analysis, forecasting | Evergreen |
 | NHTSA ADS/ADAS Crashes | Published | United States | tabular + narrative text | autonomous driving, safety, NLP | Evergreen |
+| Kaggle Top Solutions | Published | Global / Kaggle platform | writeup metadata + technique rows | Kaggle competitors, ML practitioners, AI agents | Competition painkiller |
 
 The portfolio is deliberately moving beyond a Korea-only/tabular concentration by adding multimodal and globally relevant or US-focused products.
 
@@ -153,8 +156,8 @@ For each portfolio project, keep these public, non-sensitive fields current when
 
 ## Current priorities
 
-1. Re-measure NHTSA launch adoption at the ~1-week checkpoint; the Usability/Data Explorer quality gate is complete, so avoid unnecessary content-version churn.
-2. Diagnose discovery, activation, and vote conversion across the six published datasets before starting another large flagship collection.
+1. Diagnose discovery, activation, and vote conversion across the seven published datasets before starting another large flagship collection.
+2. For Kaggle Top Solutions and Strategies, build a human-judged label sample before claiming accuracy, and leave the periodic `kts update` schedule for the owner to register.
 3. Keep the strongest evergreen/flagship datasets current when their official sources update, but avoid version churn without user value.
 4. Keep all public project READMEs synchronized in English, Korean, Japanese, and Simplified Chinese.
 5. Refresh `portfolio.json` and all four portfolio READMEs after every project completion/terminal milestone and material state change.
