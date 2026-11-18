@@ -162,6 +162,12 @@ Project repository 保存 reproducible collection/build logic、QA、source note
 4. 所有公开 project README 保持 English / Korean / Japanese / Simplified Chinese 同步。
 5. 所有 project completion / terminal milestone 与 material state change 后，更新 `portfolio.json` 与四种语言 README。
 
+
+## 精选数据资源
+
+- [可商用的发票与物流数据集](resources/commercial-invoice-datasets/README.zh-CN.md) — 14个带标签的数据集系列的官方链接、商用条件、标签范围与来源依据。核验日期：2026-11-18；仅发布链接和说明。
+
 ---
 
 本仓库是 portfolio/index。各 project 的 pipeline、QA、provenance、release history 以对应 project repository 为 source of truth；当前 platform state 以 live Kaggle readback 为最终依据。
+

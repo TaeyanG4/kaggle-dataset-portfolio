@@ -125,7 +125,7 @@
       "public_release": {
         "live_file_count": 8,
         "live_file_bytes": 2767651843,
-        "usability_snapshot": 1.0
+        "usability_snapshot": 1
       },
       "adoption_snapshot": {
         "as_of": "2026-10-25",
@@ -158,7 +158,7 @@
         "live_file_bytes": 2495575266,
         "kaggle_version": 5,
         "kaggle_status": "ready",
-        "usability_snapshot": 1.0,
+        "usability_snapshot": 1,
         "showcase_notebook": "https://www.kaggle.com/code/taeyangg4/south-korea-power-grid-v2-daily-operations-study"
       },
       "adoption_snapshot": {
@@ -191,7 +191,7 @@
       "public_release": {
         "images": 24972,
         "approx_live_bytes": 916041112,
-        "usability_snapshot": 1.0
+        "usability_snapshot": 1
       },
       "adoption_snapshot": {
         "as_of": "2026-10-25",
@@ -218,7 +218,7 @@
       "public_release": {
         "strict_hsk10_rows": 22351430,
         "approx_live_bytes": 1174488324,
-        "usability_snapshot": 1.0
+        "usability_snapshot": 1
       },
       "adoption_snapshot": {
         "as_of": "2026-10-25",
@@ -245,7 +245,7 @@
       "public_release": {
         "rows": 3010802,
         "approx_live_bytes": 403266876,
-        "usability_snapshot": 1.0
+        "usability_snapshot": 1
       },
       "adoption_snapshot": {
         "as_of": "2026-10-25",
@@ -276,7 +276,7 @@
         "live_file_bytes": 4734159,
         "source_snapshot_id": "20260827",
         "kaggle_version": 1,
-        "usability_snapshot": 1.0,
+        "usability_snapshot": 1,
         "kaggle_status": "ready",
         "showcase_notebook": "https://www.kaggle.com/code/taeyangg4/what-do-reported-self-driving-crashes-look-like",
         "data_explorer_file_descriptions_present": 1,
@@ -325,7 +325,7 @@
           "strategy": 62661
         },
         "kaggle_version": 6,
-        "usability_snapshot": 1.0,
+        "usability_snapshot": 1,
         "kaggle_status": "ready",
         "showcase_notebook": "https://www.kaggle.com/code/taeyangg4/getting-started-with-kaggle-top-solutions",
         "data_explorer_file_descriptions_present": 4,
@@ -346,5 +346,21 @@
       ],
       "next_action": "Build a human-judged label sample for technique, usage state and summary precision before claiming accuracy; the periodic `kts update` schedule stays unregistered until the owner runs it."
     }
+  ],
+  "resources": [
+    {
+      "id": "commercial-invoice-datasets",
+      "type": "curated_source_link_catalogue",
+      "directory": "resources/commercial-invoice-datasets",
+      "readme": "resources/commercial-invoice-datasets/README.md",
+      "readme_ko": "resources/commercial-invoice-datasets/README.ko.md",
+      "machine_readable_catalogue": "resources/commercial-invoice-datasets/datasets.json",
+      "reviewed_on": "2026-11-18",
+      "dataset_families": 14,
+      "scope": "Labeled invoice, logistics and adjacent receipt sources with explicit commercial-use permission for the stated scope; source-specific conditions apply.",
+      "publication": "Official source links and editorial metadata only. No original datasets, archives or downloader scripts.",
+      "notes": "AI Hub model/service use is permitted under its terms while raw-data redistribution is restricted. The separate real-document ExtractBench base release and sources with unresolved commercial rights are excluded."
+    }
   ]
 }
+

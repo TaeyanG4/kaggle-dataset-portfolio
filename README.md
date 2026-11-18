@@ -162,6 +162,12 @@ For each portfolio project, keep these public, non-sensitive fields current when
 4. Keep all public project READMEs synchronized in English, Korean, Japanese, and Simplified Chinese.
 5. Refresh `portfolio.json` and all four portfolio READMEs after every project completion/terminal milestone and material state change.
 
+
+## Curated data resources
+
+- [Commercial invoice and logistics datasets](resources/commercial-invoice-datasets/README.md) — official links for 14 labeled dataset families, with commercial-use conditions, label scope and source evidence. Reviewed 2026-11-18; links and metadata only.
+
 ---
 
 This repository is a portfolio/index. Each linked project repository remains the source of truth for its own pipeline, QA, provenance and release history, and live Kaggle readback remains authoritative for current platform state.
+

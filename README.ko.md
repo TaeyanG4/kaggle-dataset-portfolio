@@ -162,6 +162,12 @@ dataset list readback은 downloads, votes, Usability를 돌려주지만 dataset�
 4. 모든 공개 프로젝트 README를 영어·한국어·일본어·중국어 간체로 동기화합니다.
 5. 모든 프로젝트 완료/종료 milestone 및 material state change 뒤 `portfolio.json`과 네 언어 README를 갱신합니다.
 
+
+## 선별 데이터 자료
+
+- [상업 이용 가능한 인보이스·물류 데이터](resources/commercial-invoice-datasets/README.ko.md) — 라벨이 있는 14개 데이터셋 계열의 공식 링크, 상업 이용 조건, 라벨 범위와 출처 근거. 2026-11-18 확인; 링크와 설명만 게시.
+
 ---
 
 이 저장소는 포트폴리오/인덱스입니다. 각 프로젝트의 pipeline, QA, provenance, release history는 해당 프로젝트 저장소가 source of truth이며, 현재 platform 상태는 live Kaggle readback이 최종 기준입니다.
+

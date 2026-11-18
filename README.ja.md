@@ -162,6 +162,12 @@ Project repository には reproducible collection/build logic、QA、source note
 4. すべての公開 project README を English / Korean / Japanese / Simplified Chinese で同期する。
 5. すべての project completion / terminal milestone と material state change の後に `portfolio.json` と 4 言語 README を更新する。
 
+
+## 厳選データリソース
+
+- [商用利用可能なインボイス・物流データセット](resources/commercial-invoice-datasets/README.ja.md) — ラベル付き14系列の公式リンク、商用利用条件、ラベルの範囲と出典根拠。2026-11-18確認。リンクと説明のみを掲載。
+
 ---
 
 このリポジトリは portfolio/index です。各 project の pipeline、QA、provenance、release history は該当 project repository が source of truth であり、現在の platform state は live Kaggle readback が最終基準です。
+

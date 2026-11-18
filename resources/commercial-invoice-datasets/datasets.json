@@ -1,0 +1,348 @@
+{
+  "title": "Commercially usable labeled invoice and logistics datasets — official links",
+  "reviewed_on": "2026-11-18",
+  "dataset_families": 14,
+  "publication_type": "links_and_editorial_metadata_only",
+  "selection_rule": "Explicit commercial permission for the specified data scope; conditions remain source-specific. No guarantee of all possible third-party rights.",
+  "datasets": [
+    {
+      "catalog_id": 1,
+      "name": "AI Hub OCR — Finance & Logistics",
+      "official_urls": [
+        "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71301"
+      ],
+      "license_evidence_urls": [
+        "https://aihub.or.kr/aihubnews/faq/list.do",
+        "https://aihub.or.kr/intrcn/guid/usagepolicy.do"
+      ],
+      "data_license": "AI Hub terms",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "prohibited_under_standard_terms",
+      "scale_en": "Real logistics documents; CI 26,044, PL 27,388, B/L 26,541, C/O 11,137",
+      "scale_ko": "실제 물류 문서: CI 26,044 / PL 27,388 / B/L 26,541 / C/O 11,137",
+      "labels_en": "OCR polygons and transcription; linked line-item gold unverified",
+      "labels_ko": "OCR 폴리곤·전사; 품목행 연결 정답 미확인",
+      "commercial_conditions_en": "Commercial AI training/results allowed with source credit. Raw/simple-processed redistribution prohibited. Application approval required; overseas use/transfer requires separate agreement.",
+      "commercial_conditions_ko": "출처를 표시하고 AI 학습·모델·서비스 결과물을 상업 활용할 수 있음. 원본·단순 가공본 재배포 금지. 신청·승인 필요; 국외 이용·반출은 별도 합의 필요.",
+      "scope_notes_en": "The detailed logistics table totals 107,918 images; the overview says 107,919. Financial documents are a separate 50,000 images. Do not treat OCR labels as semantic item fields. Applications are limited to Korean nationals.",
+      "scope_notes_ko": "물류 상세표 합계 107,918장과 개요 107,919장에 1장 차이가 있음. 금융 50,000장은 별도. OCR 라벨을 의미 필드·품목행 정답으로 해석하지 않음. 내국인 신청 제한.",
+      "attribution": "AI Hub / National Information Society Agency",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 3,
+      "name": "Company Documents v2",
+      "official_urls": [
+        "https://huggingface.co/datasets/AyoubChLin/Company-document-dataset-v2"
+      ],
+      "license_evidence_urls": [
+        "https://huggingface.co/datasets/AyoubChLin/Company-document-dataset-v2/blob/main/README.md",
+        "https://github.com/AyoubCherguelaine/Company-document-dataset-v2",
+        "https://huggingface.co/datasets/AyoubChLin/Company-document-dataset-v2/tree/main/licenses"
+      ],
+      "data_license": "Apache-2.0; MIT/BSD seed notices",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "353,580 synthetic PDFs; 48,158 invoices; 60 fictional companies",
+      "scale_ko": "합성 PDF 353,580개 중 인보이스 48,158개; 가상 회사 60곳",
+      "labels_en": "Header and items[] JSON; field/word coordinates",
+      "labels_ko": "헤더·items[] JSON, 필드·단어 좌표",
+      "commercial_conditions_en": "Preserve Apache license/NOTICE and seed-source MIT/BSD notices; identify modifications.",
+      "commercial_conditions_ko": "Apache 라이선스·NOTICE와 seed 데이터의 MIT/BSD 고지를 보존하고 변경 사실을 표시.",
+      "scope_notes_en": "Includes invoice, packing slip, shipping order and purchase order subsets. Page counts and degraded variants are not additional independent transactions.",
+      "scope_notes_ko": "인보이스·packing slip·shipping order·purchase order 하위셋 포함. 페이지 수·훼손 변형을 독립 거래 수로 더하지 않음.",
+      "attribution": "Cherguelaine Ayoub (2026), Company Documents v2: Synthetic Business Documents",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 4,
+      "name": "Invoice Extraction Benchmark v1 — DrewKraken",
+      "official_urls": [
+        "https://github.com/DrewKraken/invoice-extraction-benchmark"
+      ],
+      "license_evidence_urls": [
+        "https://github.com/DrewKraken/invoice-extraction-benchmark/blob/main/DATA_LICENSE",
+        "https://github.com/DrewKraken/invoice-extraction-benchmark"
+      ],
+      "data_license": "CC BY 4.0 data; MIT code",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "181 synthetic documents / 220 pages; 16 freight documents",
+      "scale_ko": "합성 문서 181개 / 220페이지; freight 문서 16개",
+      "labels_en": "Header and lines[] ground truth",
+      "labels_ko": "헤더·lines[] 품목행 정답",
+      "commercial_conditions_en": "Credit the data creators, link CC BY 4.0 and mark modifications; code has a separate MIT license.",
+      "commercial_conditions_ko": "데이터 저작자·출처·CC BY 4.0 링크 및 변경 고지. 코드의 MIT 라이선스와 구분.",
+      "scope_notes_en": "Freight examples include customs-clearing cases. A useful small benchmark; not a broad sample of real suppliers.",
+      "scope_notes_ko": "운임 자료에 통관 수수료 사례 포함. 소규모 기능 평가에 적합하며 실제 거래처 다양성을 대표하지 않음.",
+      "attribution": "InvoiceParser Pro, Invoice Extraction Benchmark v1 (2026)",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 10,
+      "name": "Shopify Invoice Test Pack — SalorWorks",
+      "official_urls": [
+        "https://github.com/SalorWorks/shopify-invoice-test-pack"
+      ],
+      "license_evidence_urls": [
+        "https://github.com/SalorWorks/shopify-invoice-test-pack/blob/main/LICENSE",
+        "https://github.com/SalorWorks/shopify-invoice-test-pack/blob/main/CITATION.cff"
+      ],
+      "data_license": "CC BY 4.0",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "15 synthetic scenarios",
+      "scale_ko": "합성 시나리오 15개",
+      "labels_en": "PDF/PNG + expected.json; items, freight, duty, discounts",
+      "labels_ko": "PDF/PNG + expected.json; 품목·운임·관세·할인",
+      "commercial_conditions_en": "Credit the creator, link the source/license and mark modifications.",
+      "commercial_conditions_ko": "저작자·출처·라이선스 링크 및 변경 고지.",
+      "scope_notes_en": "Edge cases include case packs, free-of-charge items and English/Arabic documents. PDF and PNG of one scenario are the same example.",
+      "scope_notes_ko": "case pack·무상 품목·영어/아랍어 문서 등 예외 사례. 동일 시나리오의 PDF와 PNG는 같은 표본.",
+      "attribution": "SalorWorks (2026), Synthetic Shopify Invoice Test Pack, version 1.0.0",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 43,
+      "name": "InvoiceOCR-Synth",
+      "official_urls": [
+        "https://huggingface.co/datasets/alamgirqazi/invoice-ocr-synthetic"
+      ],
+      "license_evidence_urls": [
+        "https://huggingface.co/datasets/alamgirqazi/invoice-ocr-synthetic/blob/main/README.md",
+        "https://huggingface.co/api/datasets/alamgirqazi/invoice-ocr-synthetic",
+        "https://github.com/alamgirqazi/synthetic-invoice-gen"
+      ],
+      "data_license": "CC BY 4.0 data; MIT generation code",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "938 base documents / 2,814 quality-variant images",
+      "scale_ko": "기본 문서 938개 / 품질 변형 이미지 2,814개",
+      "labels_en": "32 fields and line_items[]; quantities, prices, taxes",
+      "labels_ko": "32개 필드·line_items[]; 수량·단가·세금",
+      "commercial_conditions_en": "Credit the creators, link the source/CC BY 4.0 and mark modifications. MIT applies to generation code.",
+      "commercial_conditions_ko": "저작자·출처·CC BY 4.0 링크 및 변경 고지. 생성 코드에는 별도 MIT 적용.",
+      "scope_notes_en": "Synthetic business-document mix with six templates. Clean/faded/bad_scan images share underlying records; keep each base document in one evaluation split.",
+      "scope_notes_ko": "6개 템플릿의 합성 업무 문서 혼합. clean/faded/bad_scan은 같은 원문 변형이므로 같은 기본 문서를 서로 다른 평가 분할에 넣지 않음.",
+      "attribution": "Qazi, Alamgir Munir; Nasir, Jamal Abdul; Chambeth, Pratheesh; Qureshi, Waqar Shahid (2026). InvoiceOCR-Synth: An annotation-noise-free synthetic dataset of receipt and invoice images for document information extraction. Hugging Face. DOI: 10.57967/hf/9733.",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 13,
+      "name": "KatanaML invoices-donut-data-v1",
+      "official_urls": [
+        "https://huggingface.co/datasets/katanaml-org/invoices-donut-data-v1"
+      ],
+      "license_evidence_urls": [
+        "https://huggingface.co/datasets/katanaml-org/invoices-donut-data-v1/blob/main/README.md",
+        "https://data.mendeley.com/datasets/tnj49gpmtz/2"
+      ],
+      "data_license": "MIT processing + CC BY 4.0 source documents",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "501 split records: train 425 / test 26 / validation 50; card says 500",
+      "scale_ko": "분할 합계 501건: train 425 / test 26 / validation 50; 카드 설명 500건",
+      "labels_en": "Images + ground_truth.gt_parse.items",
+      "labels_ko": "이미지 + ground_truth.gt_parse.items",
+      "commercial_conditions_en": "Preserve both Katana MIT notices and the original Mendeley CC BY 4.0 attribution/conditions.",
+      "commercial_conditions_ko": "Katana 가공본 MIT와 Mendeley 원본 CC BY 4.0 출처·조건을 함께 보존.",
+      "scope_notes_en": "The processing license does not remove the original-document license. The published card and split count disagree.",
+      "scope_notes_ko": "가공본 라이선스가 원본 문서 조건을 제거하지 않음. 카드 설명과 공개 분할 수가 불일치.",
+      "attribution": "Katana ML team; Kozłowski, Marek & Weichbroth, Paweł (2021), Samples of electronic invoices, Mendeley Data V2, DOI: 10.17632/tnj49gpmtz.2",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 6,
+      "name": "Sinabis synthetic PDF family",
+      "official_urls": [
+        "https://huggingface.co/datasets/sinabis-group/sinabis-1m-synthetic-pdf",
+        "https://huggingface.co/datasets/sinabis-group/sinabis-10k-synthetic-pdf"
+      ],
+      "license_evidence_urls": [
+        "https://huggingface.co/datasets/sinabis-group/sinabis-1m-synthetic-pdf/blob/main/README.md"
+      ],
+      "data_license": "CC BY 4.0",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "1M edition: 1,006,000 PDFs; invoices 281,680 / freight 30,180 / packing 20,120",
+      "scale_ko": "1M판: PDF 1,006,000개; 인보이스 281,680 / 운임 30,180 / 포장 20,120",
+      "labels_en": "Metadata/header fields and text; line-item gold unverified",
+      "labels_ko": "메타데이터·헤더·텍스트; 품목행 정답 미확인",
+      "commercial_conditions_en": "Credit the creator, link the source/license and mark modifications; verify the card of the selected size/version.",
+      "commercial_conditions_ko": "저작자·출처·라이선스 링크 및 변경 고지. 선택한 크기·버전의 카드를 확인.",
+      "scope_notes_en": "Includes 1K/10K/100K/1M variants. Do not add variant counts as unique documents. PDF archives and metadata Parquet serve different purposes.",
+      "scope_notes_ko": "1K/10K/100K/1M 크기 변형은 독립 문서 수로 합산하지 않음. PDF와 메타데이터 Parquet를 구분.",
+      "attribution": "Sinabis GmbH (2026). Sinabis Green Energy – Synthetic Document Dataset (1M PDFs). https://huggingface.co/datasets/sinabis-group/sinabis-1m-synthetic-pdf",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 5,
+      "name": "ExtractBench Pro — synthetic subset only",
+      "official_urls": [
+        "https://huggingface.co/datasets/llamaindex/ExtractBenchPro"
+      ],
+      "license_evidence_urls": [
+        "https://github.com/run-llama/ExtractBench",
+        "https://huggingface.co/datasets/llamaindex/ExtractBenchPro/blob/main/README.md"
+      ],
+      "data_license": "Apache-2.0",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "100 synthetic documents; mixed document types",
+      "scale_ko": "합성 문서 100개; 여러 문서 유형 혼합",
+      "labels_en": "JSON schemas and expected outputs; repeated arrays where applicable",
+      "labels_ko": "JSON 스키마·expected output; 문서에 따라 반복 배열",
+      "commercial_conditions_en": "Preserve Apache license/NOTICE and modification notices. Scope here is the synthetic Pro release only.",
+      "commercial_conditions_ko": "Apache 라이선스·NOTICE·변경 고지 보존. 이 목록의 범위는 합성 Pro 판본으로 한정.",
+      "scope_notes_en": "Not 100 invoices. The separate base release contains real public documents and is outside this catalogue’s approved scope.",
+      "scope_notes_ko": "100개 전부 인보이스가 아님. 실제 공개 문서가 포함된 별도 기본판은 이 목록의 확인 범위에서 제외.",
+      "attribution": "Boyang Zhang, Adrian Lyjak, Eli Stewart, Zhaoqi Li, Simon Suo (2026), ExtractBench",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 12,
+      "name": "FATURA2",
+      "official_urls": [
+        "https://zenodo.org/records/10371464"
+      ],
+      "license_evidence_urls": [
+        "https://zenodo.org/records/10371464",
+        "https://zenodo.org/api/records/10371464"
+      ],
+      "data_license": "CC BY 4.0 dataset",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "10,000 unique synthetic invoices / 50 templates",
+      "scale_ko": "고유 합성 인보이스 10,000개 / 50개 템플릿",
+      "labels_en": "Header fields, text/bboxes and whole-TABLE regions",
+      "labels_ko": "헤더·텍스트·bbox·전체 TABLE 영역",
+      "commercial_conditions_en": "Use the Zenodo dataset license; credit the source/license and mark modifications.",
+      "commercial_conditions_ko": "Zenodo 데이터 라이선스 기준으로 출처·라이선스·변경 고지.",
+      "scope_notes_en": "A table-region annotation is not item/cell-level gold. White/colored backgrounds are variants; the paper’s license is distinct from the dataset license.",
+      "scope_notes_ko": "TABLE 영역 라벨은 품목·셀 단위 정답이 아님. 흰색·컬러 배경은 변형본. 논문과 데이터 라이선스를 구분.",
+      "attribution": "Limam, Mahmoud; Dhiaf, Marwa; Kessentini, Yousri. FATURA Dataset. DOI: 10.5281/zenodo.10371464",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 14,
+      "name": "MIDD",
+      "official_urls": [
+        "https://zenodo.org/records/5113009"
+      ],
+      "license_evidence_urls": [
+        "https://zenodo.org/records/5113009",
+        "https://zenodo.org/api/records/5113009"
+      ],
+      "data_license": "CC BY 4.0",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "630 source invoices / 4 layouts; public release is IOB text",
+      "scale_ko": "원천 인보이스 630개 / 4개 레이아웃; 공개본은 IOB 텍스트",
+      "labels_en": "11 header-oriented NER labels",
+      "labels_ko": "헤더 중심 NER 라벨 11개",
+      "commercial_conditions_en": "Credit the source/license and mark modifications; scope is the published IOB text and annotations.",
+      "commercial_conditions_ko": "출처·라이선스·변경 고지. 공개 IOB 텍스트·주석 범위에 한정.",
+      "scope_notes_en": "The public IOB.rar does not provide the original invoice images or linked item rows.",
+      "scope_notes_ko": "공개 IOB.rar에는 원본 이미지 및 연결된 품목행 정답이 제공되지 않음.",
+      "attribution": "Dipali Baviskar; Swati Ahirrao; Ketan Kotecha. Multi-layout Invoice Document Dataset (MIDD). DOI: 10.5281/zenodo.5113009",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 15,
+      "name": "InvoicesReceiptsPT",
+      "official_urls": [
+        "https://zenodo.org/records/6371710",
+        "https://zenodo.org/records/7213544"
+      ],
+      "license_evidence_urls": [
+        "https://zenodo.org/records/6371710",
+        "https://zenodo.org/api/records/6371710",
+        "https://zenodo.org/records/7213544",
+        "https://zenodo.org/api/records/7213544"
+      ],
+      "data_license": "CC BY 4.0 original Zenodo records",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "1,003 documents: business 813 + personal 190",
+      "scale_ko": "문서 1,003개: 사업용 813 + 개인용 190",
+      "labels_en": "Eight header fields; Portuguese invoices/receipts",
+      "labels_ko": "포르투갈어 인보이스·영수증의 헤더 필드 8개",
+      "commercial_conditions_en": "Follow the original Zenodo CC BY 4.0 attribution/conditions even if a repackaged card shows Apache.",
+      "commercial_conditions_ko": "재포장 카드의 Apache 표기와 별개로 원본 Zenodo의 CC BY 4.0 출처·조건 준수.",
+      "scope_notes_en": "Two original releases are linked. Header labels do not include complete item-row gold.",
+      "scope_notes_ko": "원본 배포 2개를 연결. 헤더 라벨이며 전체 품목행 정답은 없음.",
+      "attribution": "Cruz, Francisco; Castelli, Mauro. Dataset of invoices and receipts including annotation of relevant fields (DOI: 10.5281/zenodo.6371710); Dataset of personal invoices and receipts including annotation of relevant fields (DOI: 10.5281/zenodo.7213544)",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 19,
+      "name": "jngb-labs/InvoiceBenchmark",
+      "official_urls": [
+        "https://huggingface.co/datasets/jngb-labs/InvoiceBenchmark"
+      ],
+      "license_evidence_urls": [
+        "https://huggingface.co/datasets/jngb-labs/InvoiceBenchmark/blob/main/README.md"
+      ],
+      "data_license": "MIT",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "200 synthetic invoices",
+      "scale_ko": "합성 인보이스 200개",
+      "labels_en": "Tax, subtotal, discount, total and intentional-error ground truth",
+      "labels_ko": "세액·소계·할인·합계·의도적 오류 정답",
+      "commercial_conditions_en": "Preserve copyright and MIT license notices.",
+      "commercial_conditions_ko": "저작권·MIT 라이선스 고지 보존.",
+      "scope_notes_en": "Best treated as an amount-validation benchmark, not a claim of complete line-item extraction labels.",
+      "scope_notes_ko": "금액 검증 벤치마크로 활용. 전체 품목행 추출 정답이 완비된 것으로 해석하지 않음.",
+      "attribution": "Jakob Neugebauer (2026), InvoiceBenchmark: A Controlled Corpus for Measuring LLM Invoice Processing Accuracy; jngb-labs",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 25,
+      "name": "Invoice Parsing — Mendeley",
+      "official_urls": [
+        "https://data.mendeley.com/datasets/dcbshwmfct/1"
+      ],
+      "license_evidence_urls": [
+        "https://data.mendeley.com/datasets/dcbshwmfct/1"
+      ],
+      "data_license": "CC BY 4.0",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "Described as based on 800 invoices; public release has post-OCR files",
+      "scale_ko": "800개 인보이스 기반이라고 설명; 공개본은 OCR 후처리 파일",
+      "labels_en": "Input text and Gemini-generated structured output",
+      "labels_ko": "입력 텍스트와 Gemini 생성 구조화 출력",
+      "commercial_conditions_en": "Credit the source/license and mark modifications; scope is files actually attached to the official record.",
+      "commercial_conditions_ko": "출처·라이선스·변경 고지. 공식 레코드에 실제 첨부된 파일만 해당.",
+      "scope_notes_en": "Public root files are two XLSX, one JSON and one TXT; no images were attached. Machine-generated outputs are not verified human gold.",
+      "scope_notes_ko": "확인한 공개 루트 파일은 XLSX 2개·JSON 1개·TXT 1개이며 이미지 미첨부. 기계 출력을 사람이 검수한 정답으로 간주하지 않음.",
+      "attribution": "Aldo Junaidi Pebry; Emny Yossy (2026), Invoice Parsing, Mendeley Data V1. DOI: 10.17632/dcbshwmfct.1",
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "catalog_id": 28,
+      "name": "CORD v2",
+      "official_urls": [
+        "https://huggingface.co/datasets/naver-clova-ix/cord-v2"
+      ],
+      "license_evidence_urls": [
+        "https://github.com/clovaai/cord",
+        "https://huggingface.co/datasets/naver-clova-ix/cord-v2"
+      ],
+      "data_license": "CC BY 4.0",
+      "commercial_use": "permitted_under_source_conditions",
+      "raw_data_redistribution": "permitted_under_listed_licenses_and_scope",
+      "scale_en": "1,000 public receipts: train 800 / validation 100 / test 100",
+      "scale_ko": "공개 영수증 1,000개: train 800 / validation 100 / test 100",
+      "labels_en": "Text/bboxes, semantic fields, grouped menu/item rows and gt_parse",
+      "labels_ko": "텍스트·bbox·의미 필드·메뉴/품목행 그룹·gt_parse",
+      "commercial_conditions_en": "Credit the creators, link the source/license and mark modifications.",
+      "commercial_conditions_ko": "저작자·출처·라이선스 링크 및 변경 고지.",
+      "scope_notes_en": "Retail receipts are an adjacent domain, not customs invoices. This entry covers the public 1,000-document subset, not the full research corpus.",
+      "scope_notes_ko": "소매 영수증 보조 자료이며 통관 인보이스가 아님. 논문의 전체 코퍼스가 아닌 공개 1,000개 하위셋만 해당.",
+      "attribution": "Seunghyun Park, Seung Shin, Bado Lee, Junyeop Lee, Jaeheung Surh, Minjoon Seo, Hwalsuk Lee (2019). CORD: A Consolidated Receipt Dataset for Post-OCR Parsing. NAVER CLOVA.",
+      "reviewed_on": "2026-11-18"
+    }
+  ]
+}
